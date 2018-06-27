@@ -1,9 +1,9 @@
 import { camelCase } from 'lodash';
-import nx from '../node_modules/next-js-core2/dist/next-js-core2';
+import nx from 'next-js-core2';
 
 App({
 	onLaunch() {
-		console.log(typeof 'nx121323');
+		console.log(nx, typeof 'nx121323');
 		console.log(camelCase('OnLaunch'));
 		// 调用API从本地缓存中获取数据
 		const logs = wx.getStorageSync('logs') || [];
@@ -24,7 +24,7 @@ App({
 							typeof cb === 'function' && cb(this.globalData.userInfo);
 						},
 					});
-				},
+				}
 			});
 		}
 	},

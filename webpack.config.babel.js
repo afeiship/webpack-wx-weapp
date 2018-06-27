@@ -109,7 +109,8 @@ export default (env = {}) => {
         wx: 'wx'
       }),
       new WXAppWebpackPlugin({
-        clear: !isDev,
+				clear: !isDev,
+				commonModuleName:'common.js'
       }),
       new optimize.ModuleConcatenationPlugin(),
       new IgnorePlugin(/vertx/),
