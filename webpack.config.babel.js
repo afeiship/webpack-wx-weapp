@@ -5,9 +5,8 @@ import {
   IgnorePlugin,
   optimize,
 } from 'webpack';
-import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
+import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
 import pkg from './package.json';
 
 const {NODE_ENV} = process.env;
@@ -45,8 +44,7 @@ export default (env = {}) => {
     output: {
       filename: '[name].js',
       publicPath: '/',
-      path: resolve('dist'),
-      libraryTarget: 'commonjs2',
+      path: resolve('dist')
     },
     target: Targets.Wechat,
     module: {
@@ -114,7 +112,6 @@ export default (env = {}) => {
       new optimize.ModuleConcatenationPlugin(),
       new IgnorePlugin(/vertx/),
       min && new MinifyPlugin(),
-      new CopyPlugin(copyPatterns, {context: srcDir}),
     ].filter(Boolean),
     devtool: isDev ? 'source-map' : false,
     resolve: {
