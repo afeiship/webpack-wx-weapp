@@ -5,20 +5,11 @@ import {
   IgnorePlugin,
   optimize,
 } from 'webpack';
-import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
-import MinifyPlugin from 'babel-minify-webpack-plugin';
-import pkg from './package.json';
+import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
 
 const {NODE_ENV} = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
-
-const copyPatterns = []
-  .concat(pkg.copyWebpack || [])
-  .map(
-    (pattern) =>
-      typeof pattern === 'string' ? {from: pattern, to: pattern} : pattern,
-  );
 
 export default (env = {}) => {
   const min = env.min;
@@ -51,18 +42,8 @@ export default (env = {}) => {
       rules: [
         {
           test: /\.js$/,
-          include: /src/,
           exclude: /node_modules/,
           use: ['babel-loader'],
-        },
-        {
-          test: /\.wxs$/,
-          include: /src/,
-          exclude: /node_modules/,
-          use: [
-            relativeFileLoader(),
-            'babel-loader',
-          ],
         },
         {
           test: /\.(scss|wxss)$/,
@@ -106,12 +87,11 @@ export default (env = {}) => {
         wx: 'wx'
       }),
       new WXAppWebpackPlugin({
-				clear: !isDev,
-				commonModuleName:'common.js'
+        clear: !isDev,
+        commonModuleName: 'common.js'
       }),
       new optimize.ModuleConcatenationPlugin(),
       new IgnorePlugin(/vertx/),
-      min && new MinifyPlugin(),
     ].filter(Boolean),
     devtool: isDev ? 'source-map' : false,
     resolve: {

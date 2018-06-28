@@ -16,16 +16,13 @@ Page({
       url: '../logs/logs',
     });
   },
+  test1(){
+    wx.navigateTo({
+      url: '../logs/logs',
+    });
+  },
   async onLoad() {
     await delay();
-
-    const log = flow(() => {
-      console.log('is wechat mini program: ', __WECHAT__);
-      console.log('is alipay mini program: ', __ALIPAY__);
-      console.log('DEV: ', __DEV__);
-    });
-
-    log();
 
     // 调用应用实例的方法获取全局数据
     app.getUserInfo((userInfo) => {

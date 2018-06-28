@@ -9,7 +9,7 @@
 }
 
 .face {
-	$r: 24px;
+	$r: 48px;
 
 	width: $r;
 	height: $r;
@@ -21,4 +21,8 @@
 	margin-top: 30px;
 	font-size: 11px;
 	color: gray;
+}
+
+.cRed{
+	border:1px solid #f00;
 }

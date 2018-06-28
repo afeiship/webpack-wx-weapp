@@ -3,7 +3,7 @@ import nx from 'next-js-core2';
 
 App({
   onLaunch() {
-    console.log(nx, typeof 'nx121323');
+    console.log(nx, nx.VERSION);
     console.log(camelCase('OnLaunch'));
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync('logs') || [];

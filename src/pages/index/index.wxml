@@ -1,6 +1,5 @@
 <!--index.wxml-->
-<import src="../../wxml/motto/motto.wxml"/>
-<wxs src="../../wxs/powered.wxs" module="powered" />
+<import src="../../components/motto/motto.wxml"/>
 
 <view class="container">
   <view bindtap="bindViewTap">
@@ -10,6 +9,6 @@
     <template is="motto" data="{{motto:motto}}" />
   </view>
   <view class="powered">
-    <text>{{powered.by}}</text>
+    <button bindtap="test1" class="cRed">BY FEI</button>
   </view>
 </view>
