@@ -7,6 +7,10 @@ Component({
     img: {
       type: String,
       value: require('#images/face.png')
+    },
+    className: {
+      type: String,
+      value: 'cRed'
     }
   },
 });

@@ -1,6 +1,5 @@
-import {resolve, basename} from 'path';
+import {resolve} from 'path';
 import {
-  DefinePlugin,
   EnvironmentPlugin,
   IgnorePlugin,
   optimize, ProvidePlugin,
@@ -52,7 +51,9 @@ export default (env = {}) => {
             {
               loader: 'sass-loader',
               options: {
-                includePaths: [resolve('src', './assets/styles')],
+                includePaths: [
+                  resolve('src', './assets/styles')
+                ],
               },
             },
           ],
@@ -89,7 +90,7 @@ export default (env = {}) => {
               },
             },
           ],
-        }
+        },
       ],
     },
     plugins: [
