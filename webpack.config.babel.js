@@ -1,7 +1,8 @@
-import {resolve} from 'path';
+import {resolve, basename} from 'path';
 import {
   DefinePlugin,
   EnvironmentPlugin,
+  NormalModuleReplacementPlugin,
   IgnorePlugin,
   optimize, ProvidePlugin,
 } from 'webpack';
@@ -60,14 +61,16 @@ export default (env = {}) => {
         {
           test: /\.(png|jpg|gif)$/,
           include: /src/,
-          use: {
-            loader: 'file-loader',
-            options: {
-              useRelativePath: true,
-              name: '[name]_[hash:6].[ext]',
-              context: resolve('src')
-            },
-          },
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                useRelativePath: true,
+                name: '[name]_[hash:8].[ext]',
+                context: resolve('src')
+              },
+            }
+          ],
         },
         {
           test: /\.(json)$/,
@@ -87,7 +90,7 @@ export default (env = {}) => {
               },
             },
           ],
-        },
+        }
       ],
     },
     plugins: [
@@ -103,14 +106,15 @@ export default (env = {}) => {
       }),
       new optimize.ModuleConcatenationPlugin(),
       new IgnorePlugin(/vertx/),
-    ].filter(Boolean),
+    ],
     devtool: isDev ? 'source-map' : false,
     resolve: {
       extensions: ['.js', '.json', '.scss'],
       alias: {
         '#': resolve(__dirname, './src/components'),
         '#images': resolve(__dirname, './src/assets/images'),
-        '#styles': resolve(__dirname, './src/assets/styles')
+        '#styles': resolve(__dirname, './src/assets/styles'),
+        'services': resolve(__dirname, './src/components/services')
       }
     },
     watchOptions: {

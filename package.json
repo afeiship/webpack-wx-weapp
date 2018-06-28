@@ -31,6 +31,7 @@
     "node-sass": "^4.6.1",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
+    "string-replace-webpack-plugin": "^0.1.3",
     "webpack": "^3.8.1",
     "wxapp-webpack-plugin": "^0.17.1",
     "wxml-loader": "^0.2.1"
@@ -38,16 +39,17 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "es6-promise": "^4.1.0",
-    "lodash": "^4.17.4",
-    "next-js-core2": "github:afeiship/next-js-core2",
     "http-rest-config": "github:afeiship/http-rest-config",
+    "lodash": "^4.17.4",
     "mpvue": "^1.0.11",
     "next-content-type": "github:afeiship/next-content-type",
+    "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",
     "next-weapp-request": "github:afeiship/next-weapp-request",
     "next-weapp-storage": "github:afeiship/next-weapp-storage",
     "weapp-sassui-short-name": "github:afeiship/weapp-sassui-short-name",
     "webkit-sass-flexbox-grid": "github:afeiship/webkit-sass-flexbox-grid",
+    "webkit-sass-functions": "github:afeiship/webkit-sass-functions",
     "webkit-sass-generators": "github:afeiship/webkit-sass-generators",
     "webkit-sass-mixins": "github:afeiship/webkit-sass-mixins"
   },

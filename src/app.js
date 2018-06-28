@@ -1,8 +1,8 @@
 import {camelCase} from 'lodash';
-
+import { $store } from '#';
 App({
   onLaunch() {
-    console.log(nx, nx.VERSION);
+    console.log(nx, nx.VERSION, $store);
     console.log(camelCase('OnLaunch'));
     // 调用API从本地缓存中获取数据
     const logs = wx.getStorageSync('logs') || [];
