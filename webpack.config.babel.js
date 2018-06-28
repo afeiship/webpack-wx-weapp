@@ -2,7 +2,6 @@ import {resolve, basename} from 'path';
 import {
   DefinePlugin,
   EnvironmentPlugin,
-  NormalModuleReplacementPlugin,
   IgnorePlugin,
   optimize, ProvidePlugin,
 } from 'webpack';

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "user": "../../components/views/user/user"
+    "user": "../../components/views/user/user",
+    "avatar": "../../components/views/avatar/avatar"
   }
 }

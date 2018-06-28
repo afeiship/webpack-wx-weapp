@@ -4,6 +4,7 @@
 <view class="container">
   <view bindtap="bindViewTap">
     <user avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
+    <avatar />
   </view>
   <view class="motto">
     <template is="motto" data="{{motto:motto}}" />
