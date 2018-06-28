@@ -1,6 +1,8 @@
 # webpack-wx-weapp
 > Webpack for weapp.
 
+## attention:
+- [x] 关闭小程序的 es6 转 es5 这个选项
 
 ## resouces:
 + https://github.com/canisminor1990/canisminor-wxapp

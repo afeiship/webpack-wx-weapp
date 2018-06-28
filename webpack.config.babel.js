@@ -48,7 +48,7 @@ export default (env = {}) => {
       path: resolve('dist'),
       libraryTarget: 'commonjs2',
     },
-    target: Targets['Wechat'],
+    target: Targets.Wechat,
     module: {
       rules: [
         {
@@ -105,7 +105,6 @@ export default (env = {}) => {
         NODE_ENV: 'development',
       }),
       new DefinePlugin({
-        __DEV__: isDev,
         wx: 'wx'
       }),
       new WXAppWebpackPlugin({
