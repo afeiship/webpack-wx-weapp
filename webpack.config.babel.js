@@ -64,8 +64,8 @@ export default (env = {}) => {
             loader: 'file-loader',
             options: {
               useRelativePath: true,
-              name: 'assets/images/[name]_[hash:6].[ext]',
-              context: resolve('src', './assets/images')
+              name: '[name]_[hash:6].[ext]',
+              context: resolve('src')
             },
           },
         },

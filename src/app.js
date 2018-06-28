@@ -1,5 +1,4 @@
 import {camelCase} from 'lodash';
-// import nx from 'next-js-core2';
 
 App({
   onLaunch() {
