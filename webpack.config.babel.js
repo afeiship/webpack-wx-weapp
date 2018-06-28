@@ -10,13 +10,8 @@ import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
 const {NODE_ENV} = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
-// const alias = {
-//   images: resolve(__dirname, './src/assets/images'),
-//   components: resolve(__dirname, './src/components')
-// };
 
 export default (env = {}) => {
-  const min = env.min;
 
   const relativeFileLoader = (ext = '[ext]') => {
     return {
@@ -69,7 +64,7 @@ export default (env = {}) => {
             loader: 'file-loader',
             options: {
               useRelativePath: true,
-              name: `assets/images/[name][hash:6].[ext]`,
+              name: 'assets/images/[name]_[hash:6].[ext]',
               context: resolve('src', './assets/images')
             },
           },
