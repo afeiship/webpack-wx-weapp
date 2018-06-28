@@ -1,6 +1,6 @@
 
 $padding: 200rpx;
-
+@import "_mixins";
 .container {
 	height: 100%;
 	display: flex;
@@ -9,4 +9,5 @@ $padding: 200rpx;
 	justify-content: space-between;
 	padding: $padding 0;
 	box-sizing: border-box;
+	@include full();
 }

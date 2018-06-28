@@ -3,13 +3,17 @@ import {
   DefinePlugin,
   EnvironmentPlugin,
   IgnorePlugin,
-  optimize,
+  optimize, ProvidePlugin,
 } from 'webpack';
 import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
 
 const {NODE_ENV} = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
+// const alias = {
+//   images: resolve(__dirname, './src/assets/images'),
+//   components: resolve(__dirname, './src/components')
+// };
 
 export default (env = {}) => {
   const min = env.min;
@@ -53,13 +57,25 @@ export default (env = {}) => {
             {
               loader: 'sass-loader',
               options: {
-                includePaths: [resolve('src', 'styles'), srcDir],
+                includePaths: [resolve('src', './assets/styles')],
               },
             },
           ],
         },
         {
-          test: /\.(json|png|jpg|gif)$/,
+          test: /\.(png|jpg|gif)$/,
+          include: /src/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: `assets/images/[name][hash:6].[ext]`,
+              context: resolve('src', './assets/images')
+            },
+          },
+        },
+        {
+          test: /\.(json)$/,
           include: /src/,
           use: relativeFileLoader(),
         },
@@ -67,7 +83,7 @@ export default (env = {}) => {
           test: /\.(wxml)$/,
           include: /src/,
           use: [
-            relativeFileLoader('wxml'),
+            relativeFileLoader(),
             {
               loader: 'wxml-loader',
               options: {
@@ -83,8 +99,8 @@ export default (env = {}) => {
       new EnvironmentPlugin({
         NODE_ENV: 'development',
       }),
-      new DefinePlugin({
-        wx: 'wx'
+      new ProvidePlugin({
+        nx: 'next-js-core2'
       }),
       new WXAppWebpackPlugin({
         clear: !isDev,
@@ -95,7 +111,12 @@ export default (env = {}) => {
     ].filter(Boolean),
     devtool: isDev ? 'source-map' : false,
     resolve: {
-      modules: [resolve(__dirname, 'src'), 'node_modules'],
+      extensions: ['.js', '.json', '.scss'],
+      alias: {
+        '#': resolve(__dirname, './src/components'),
+        '#images': resolve(__dirname, './src/assets/images'),
+        '#styles': resolve(__dirname, './src/assets/styles')
+      }
     },
     watchOptions: {
       ignored: /dist|manifest/,
