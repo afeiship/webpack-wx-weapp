@@ -13,3 +13,13 @@
 + https://github.com/canisminor1990/canisminor-wxapp
 + https://segmentfault.com/a/1190000004141674
 + https://github.com/Cap32/wxapp-webpack-plugin
+
+
+## generator:
++ https://github.com/afeiship/generator-weapp
+
+## generator usage:
+```bash
+yo weap:page --d=src/pages
+yo weap:page --d=src/components
+```

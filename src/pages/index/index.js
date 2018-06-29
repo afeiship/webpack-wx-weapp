@@ -18,6 +18,7 @@ Page({
     });
   },
   test1(){
+    console.log('test1');
     wx.navigateTo({
       url: '../logs/logs',
     });
