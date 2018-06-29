@@ -8,6 +8,7 @@
 - [x] image: #images/face.png 加载本地图片 /assets/images/face.png
 - [x] 组件中的样式需要引用一下 style.wxss [ 可以考虑 dll 的思路 ]
 - [ ] 优化(代码、options) weapp-sass-loader.js 这个loader 并存放github
+- [ ] Single File APP/PAGE/COMPONENT ? 
 
 ## resources:
 + https://github.com/canisminor1990/canisminor-wxapp
