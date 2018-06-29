@@ -56,10 +56,18 @@ export default (env = {}) => {
           use: ['babel-loader'],
         },
         {
-          test: /\.(scss|wxss)$/,
+          test: /\.(wxss)$/,
+          include: /src/,
+          use: [
+            relativeFileLoader(),
+          ]
+        },
+        {
+          test: /\.(scss)$/,
           include: /src/,
           use: [
             relativeFileLoader('wxss'),
+            'weapp-sass-loader',
             {
               loader: 'sass-loader',
               options: {
