@@ -30,6 +30,9 @@ export default (env = {}) => {
         './src/app.js',
       ]
     },
+    resolveLoader: {
+      modules: ['./build/loaders', 'node_modules']
+    },
     output: {
       filename: '[name].js',
       publicPath: '/',
@@ -38,6 +41,13 @@ export default (env = {}) => {
     target: Targets.Wechat,
     module: {
       rules: [
+        // {
+        //   test: /\.vue$/,
+        //   loader: 'weapp-vue-loader',
+        //   options: {
+        //     path: 'components/views'
+        //   }
+        // },
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -66,7 +76,7 @@ export default (env = {}) => {
               loader: 'file-loader',
               options: {
                 useRelativePath: true,
-                name: '[name]_[hash:8].[ext]',
+                name: '[name].[ext]',
                 context: resolve('src')
               },
             }
@@ -89,6 +99,17 @@ export default (env = {}) => {
                 enforceRelativePath: true,
               },
             },
+            {
+              loader: 'weapp-wxml-loader',
+              options: {
+                transformToRequire: {
+                  video: 'src',
+                  source: 'src',
+                  img: 'src',
+                  image: 'xlink:href'
+                }
+              }
+            }
           ],
         },
       ],
