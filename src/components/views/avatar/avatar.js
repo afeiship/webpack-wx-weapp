@@ -6,7 +6,7 @@ Component({
     },
     img: {
       type: String,
-      value: 'http://placeholder.qiniudn.com/80x80'
+      value: require('#images/face.png')
     },
     className: {
       type: String,

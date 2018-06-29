@@ -5,10 +5,12 @@ import {
   optimize, ProvidePlugin,
 } from 'webpack';
 import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
+import 'next-replace';
 
 const {NODE_ENV} = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
+
 
 export default (env = {}) => {
 
@@ -36,7 +38,7 @@ export default (env = {}) => {
     output: {
       filename: '[name].js',
       publicPath: '/',
-      path: resolve('dist')
+      path: resolve(__dirname, 'dist'),
     },
     target: Targets.Wechat,
     module: {
@@ -71,16 +73,14 @@ export default (env = {}) => {
         {
           test: /\.(png|jpg|gif)$/,
           include: /src/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                useRelativePath: true,
-                name: '[name].[ext]',
-                context: resolve('src')
-              },
-            }
-          ],
+          use: {
+            loader: 'file-loader',
+            options: {
+              useRelativePath: true,
+              name: `[name]_[hash].[ext]`,
+              context: srcDir,
+            },
+          },
         },
         {
           test: /\.(json)$/,
@@ -96,19 +96,8 @@ export default (env = {}) => {
               loader: 'wxml-loader',
               options: {
                 root: srcDir,
-                enforceRelativePath: true,
+                enforceRelativePath: false
               },
-            },
-            {
-              loader: 'weapp-wxml-loader',
-              options: {
-                transformToRequire: {
-                  video: 'src',
-                  source: 'src',
-                  img: 'src',
-                  image: 'xlink:href'
-                }
-              }
             }
           ],
         },
