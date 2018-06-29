@@ -4,8 +4,6 @@
     </view>
 </template>
 
-<!--SP-->
-
 <script>
   export default {
     config: {
@@ -25,8 +23,6 @@
     }
   }
 </script>
-
-<!--SP-->
 
 <style>
     body {
