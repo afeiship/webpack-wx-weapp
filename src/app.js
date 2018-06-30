@@ -1,5 +1,6 @@
 import {camelCase} from 'lodash';
 import { $store } from '#';
+
 App({
   onLaunch() {
     console.log(nx, nx.VERSION, $store);

@@ -14,13 +14,13 @@ Page({
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
-      url: '../logs/logs',
+      url: '../logs/index',
     });
   },
   test1(){
     console.log('test1');
     wx.navigateTo({
-      url: '../logs/logs',
+      url: '../logs/index',
     });
   },
   async onLoad() {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  export default {
+  module.exports = {
     config: {
       component: true
     },
@@ -19,12 +19,18 @@
           type: String,
           value: '-'
         }
+      },
+      methods: {
+        test1() {
+          console.log('hello');
+        }
       }
     }
-  }
+  };
 </script>
 
 <style>
+    /*@import "/app.wxss";*/
     body {
         color: #f00;
     }

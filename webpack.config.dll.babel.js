@@ -9,11 +9,6 @@ import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
 import 'next-replace';
 
 const extractCss = new ExtractTextPlugin('app.wxss');
-const {NODE_ENV} = process.env;
-const isDev = NODE_ENV !== 'production';
-const srcDir = resolve('src');
-
-
 export default (env = {}) => {
 
   return {
@@ -54,4 +49,5 @@ export default (env = {}) => {
       extractCss
     ]
   };
+
 };

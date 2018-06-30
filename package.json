@@ -10,9 +10,7 @@
     "predev": "npm run dll",
     "prebuild": "npm run dll",
     "dev": "webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack -p",
-    "create-page": "create-wxapp-page --type=page --dir=src --indent=tab --style=scss",
-    "create-component": "create-wxapp-page --type=component --dir=src --indent=tab --style=scss"
+    "build": "cross-env NODE_ENV=production webpack -p"
   },
   "main": "dist/app.js",
   "author": "afeiship",
@@ -35,9 +33,14 @@
     "glob": "^7.1.2",
     "node-sass": "^4.6.1",
     "postcss-loader": "^2.1.5",
+    "postcss-remove-prefixes": "^1.2.0",
+    "require-from-string": "^2.0.2",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.7",
+    "string-replace-loader": "^2.1.1",
     "string-replace-webpack-plugin": "^0.1.3",
+    "style-loader": "^0.21.0",
+    "weapp-vue-parser": "github:afeiship/weapp-vue-parser",
     "webpack": "^3.8.1",
     "wxapp-webpack-plugin": "^0.17.1",
     "wxml-loader": "^0.2.1"
@@ -47,7 +50,6 @@
     "es6-promise": "^4.1.0",
     "http-rest-config": "github:afeiship/http-rest-config",
     "lodash": "^4.17.4",
-    "mpvue": "^1.0.11",
     "next-content-type": "github:afeiship/next-content-type",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",
@@ -59,11 +61,5 @@
     "webkit-sass-functions": "github:afeiship/webkit-sass-functions",
     "webkit-sass-generators": "github:afeiship/webkit-sass-generators",
     "webkit-sass-mixins": "github:afeiship/webkit-sass-mixins"
-  },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "node_modules",
-      "lib"
-    ]
   }
 }

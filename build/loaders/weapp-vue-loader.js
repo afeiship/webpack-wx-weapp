@@ -1,25 +1,23 @@
 const fs = require('fs');
+const beautify = require('js-beautify');
+const requireFromString = require('require-from-string');
 const loaderUtils = require('loader-utils');
+const weappVueParser = require('weapp-vue-parser').default;
+
 
 module.exports = function (inSource) {
   // console.log(inSource);
   const options = loaderUtils.getOptions(this);
-  const content = inSource.split('<!--SP-->');
-  const str = content[1].replace('<script>', '').replace('</script>', '').replace('export default', '');
+  const result = weappVueParser(inSource);
+  const jsObject = requireFromString(result.script);
+  this.emitFile('components/views/card/card.json', JSON.stringify(jsObject.config, null, 2));
+  this.emitFile('components/views/card/card.js', beautify(
+    `Component(${JSON.stringify(jsObject.component)})`,
+    {indent_size: 2}
+  ));
 
-  // console.log('str iwth options:------->', options);
-  // console.log(eval(str.trim()));
 
-  // console.log(content);
-
-  // this.emitFile('components/views/card/card.wxml', content[0].replace('<template>', '').replace('</template>', ''));
-  // this.emitFile('components/views/card/card.js', script.component);
-  // this.emitFile('components/views/card/card.json', script.config);
-  // this.emitFile('components/views/card/card.wxss', content[2].replace('<style>', '').replace('</style>', ''));
-  // fs.writeFileSync(content[0],'/Users/feizheng/github/webpack-wx-weapp/dist/card.wxml');
-  // fs.writeFileSync(content[1],'/Users/feizheng/github/webpack-wx-weapp/dist/card.js');
-  // fs.writeFileSync(content[2],'/Users/feizheng/github/webpack-wx-weapp/dist/card.wxss');
-
-  //Must return String OR Buffer
-  return '';
+  this.emitFile('components/views/card/card.wxml', result.html);
+  this.emitFile('components/views/card/card.wxss', result.style);
+  return 'NONE';
 };

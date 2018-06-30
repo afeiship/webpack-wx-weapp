@@ -1,13 +1,12 @@
-import {resolve} from 'path';
+import { resolve } from 'path';
 import {
   EnvironmentPlugin,
   IgnorePlugin,
   optimize, ProvidePlugin,
 } from 'webpack';
-import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
-import 'next-replace';
+import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 
-const {NODE_ENV} = process.env;
+const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
 
@@ -43,13 +42,6 @@ export default (env = {}) => {
     target: Targets.Wechat,
     module: {
       rules: [
-        // {
-        //   test: /\.vue$/,
-        //   loader: 'weapp-vue-loader',
-        //   options: {
-        //     path: 'components/views'
-        //   }
-        // },
         {
           test: /\.js$/,
           exclude: /node_modules/,
@@ -67,7 +59,17 @@ export default (env = {}) => {
           include: /src/,
           use: [
             relativeFileLoader('wxss'),
-            'weapp-sass-loader',
+            {
+              loader: 'string-replace-loader',
+              options: {
+                multiple: [
+                  { search: '/*@import "/app.wxss";*/', replace: '@import "/app.wxss";' },
+                ]
+              }
+            },
+            {
+              loader: 'postcss-loader',
+            },
             {
               loader: 'sass-loader',
               options: {
@@ -140,4 +142,5 @@ export default (env = {}) => {
       aggregateTimeout: 300,
     }
   };
+
 };
