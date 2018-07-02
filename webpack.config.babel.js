@@ -1,12 +1,12 @@
-import { resolve } from 'path';
+import {resolve} from 'path';
 import {
   EnvironmentPlugin,
   IgnorePlugin,
   optimize, ProvidePlugin,
 } from 'webpack';
-import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
+import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
 
-const { NODE_ENV } = process.env;
+const {NODE_ENV} = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
 
@@ -43,6 +43,21 @@ export default (env = {}) => {
     module: {
       rules: [
         {
+          test: /\.vue$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                useRelativePath: true,
+                name: `[name]/[name].js`,
+                context: srcDir,
+              },
+            },
+            'babel-loader',
+            'lit-loader'
+          ]
+        },
+        {
           test: /\.js$/,
           exclude: /node_modules/,
           use: ['babel-loader'],
@@ -63,7 +78,7 @@ export default (env = {}) => {
               loader: 'string-replace-loader',
               options: {
                 multiple: [
-                  { search: '/*@import "/app.wxss";*/', replace: '@import "/app.wxss";' },
+                  {search: '/*@import "/app.wxss";*/', replace: '@import "/app.wxss";'},
                 ]
               }
             },

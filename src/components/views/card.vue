@@ -1,11 +1,26 @@
+<style lang="postcss"> <!-- This will enable PostCSS compilation -->
+span {
+    user-select:none;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+
 <template>
-    <view>
-        <text>Hello</text>
-    </view>
+    <div>
+        <p>
+            Clicked: <span>${props.clicks}</span> times.
+            Value is <span>${props.value}</span>.
+            <button on-click="${() => this._onIncrement()}" title="Add 1">+</button>
+            <button on-click="${() => this._onDecrement()}" title="Minus 1">-</button>
+        </p>
+    </div>
 </template>
 
 <script>
-  module.exports = {
+  export default{
     config: {
       component: true
     },
@@ -22,16 +37,10 @@
       },
       methods: {
         test1() {
+          const { VERSION } = nx;
           console.log('hello');
         }
       }
     }
   };
 </script>
-
-<style>
-    /*@import "/app.wxss";*/
-    body {
-        color: #f00;
-    }
-</style>

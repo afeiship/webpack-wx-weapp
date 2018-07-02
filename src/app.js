@@ -1,5 +1,6 @@
 import {camelCase} from 'lodash';
 import { $store } from '#';
+import Card  from '#/views/card.vue';
 
 App({
   onLaunch() {
