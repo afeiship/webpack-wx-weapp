@@ -21,6 +21,6 @@
 
 ## generator usage:
 ```bash
-yo weap:page --d=src/pages
-yo weap:page --d=src/components
+yo weapp:page --d=src/pages
+yo weapp:page --d=src/components
 ```
