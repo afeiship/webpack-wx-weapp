@@ -5,10 +5,8 @@ import {
   optimize, ProvidePlugin,
 } from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
-import 'next-replace';
-
 const extractCss = new ExtractTextPlugin('app.wxss');
+
 export default (env = {}) => {
 
   return {
