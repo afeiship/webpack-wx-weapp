@@ -1,5 +1,5 @@
 {
-  "name": "webpack-wx-weapp",
+  "name": "zb-weapp-auction",
   "version": "0.0.1",
   "description": "Webpack for weapp(wechat).",
   "private": true,
@@ -31,7 +31,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "1.1.11",
     "glob": "^7.1.2",
-    "lit-loader": "0.0.1",
     "node-sass": "^4.6.1",
     "postcss-loader": "^2.1.5",
     "postcss-remove-prefixes": "^1.2.0",
