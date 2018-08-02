@@ -43,21 +43,6 @@ export default (env = {}) => {
     module: {
       rules: [
         {
-          test: /\.vue$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                useRelativePath: true,
-                name: `[name]/[name].js`,
-                context: srcDir,
-              },
-            },
-            'babel-loader',
-            'lit-loader'
-          ]
-        },
-        {
           test: /\.js$/,
           exclude: /node_modules/,
           use: ['babel-loader'],
