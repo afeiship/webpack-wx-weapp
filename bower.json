@@ -1,0 +1,24 @@
+{
+  "name": "webpack-wx-weapp",
+  "description": "Webpack for weapp(wechat).",
+  "main": "dist/app.js",
+  "authors": [
+    "afeiship"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "weapp"
+  ],
+  "homepage": "https://github.com/afeiship/webpack-wx-weapp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "weapp-auth-user-info": "afeiship/weapp-auth-user-info"
+  }
+}
