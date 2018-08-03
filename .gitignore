@@ -8,6 +8,7 @@ Thumbs.db
 .log
 *.log
 node_modules
+src/bower_components
 dist
 lib
 .idea
