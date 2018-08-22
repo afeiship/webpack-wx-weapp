@@ -134,7 +134,8 @@ export default (env = {}) => {
         '#': resolve(__dirname, './src/components'),
         '#images': resolve(__dirname, './src/assets/images'),
         '#styles': resolve(__dirname, './src/assets/styles'),
-        'services': resolve(__dirname, './src/components/services')
+        'services': resolve(__dirname, './src/components/services'),
+        'interceptors': resolve(__dirname, './src/components/interceptors')
       }
     },
     watchOptions: {

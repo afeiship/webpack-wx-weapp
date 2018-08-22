@@ -2,6 +2,10 @@ import NxWeappRequest from 'next-weapp-request';
 import 'next-content-type';
 import 'next-param';
 
+import { Request, Response, Error } from 'interceptors';
+
+
+
 const Http = nx.declare({
   extends: NxWeappRequest,
   methods: {
