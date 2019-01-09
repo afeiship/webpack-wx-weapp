@@ -1,4 +1,4 @@
-# zb-weapp-auction
+# webpack-wx-weapp
 > Webpack for weapp.
 
 ## generator:
