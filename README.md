@@ -13,8 +13,9 @@
 - [x] Yeoman(Generator) 
 - [x] use `nx.App/Page/Component` enhanced wxapp
 - [x] redux: redux globalData shared [nx.\$app/\$memory/\$local]
+- [x] enhanced: mixins/observe/redux
 - [ ] alert/confirm/toast Basic component
-- [ ] enhanced: mixins/observe/redux
+
 
 
 ## generator usage:
