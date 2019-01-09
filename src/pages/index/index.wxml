@@ -10,6 +10,8 @@
     <template is="motto" data="{{motto:motto}}" />
   </view>
   <view class="powered">
+    <view>Show GlolbalData:{{ gData }}</view>
+    <button bindtap="test2">Set GlolbalData</button>
     <button bindtap="test1" class="cRed">BY FEI</button>
   </view>
 </view>

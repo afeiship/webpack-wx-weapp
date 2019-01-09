@@ -12,6 +12,7 @@
 - [x] components install from github(bower)
 - [x] Yeoman(Generator) 
 - [x] use `nx.App/Page/Component` enhanced wxapp
+- [ ] redux globalData shared [nx.\$app/\$memory/\$local]
 
 
 ## generator usage:

@@ -28,6 +28,7 @@ nx.App({
     }
   },
   globalData: {
+    test: 123,
     userInfo: null
   }
 });

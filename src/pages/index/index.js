@@ -1,35 +1,34 @@
-import {flow} from 'lodash';
-// import Card from '#/views/card.vue';
-
 const delay = (t = 0) => new Promise((resolve) => setTimeout(resolve, t));
 
-// 获取应用实例
-const app = getApp(); //  eslint-disable-line no-undef
-
-Page({
+nx.Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
+    gData: null
   },
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({
-      url: '../logs/index',
+      url: '../logs/index'
     });
   },
-  test1(){
+  test1() {
     console.log('test1');
     wx.navigateTo({
-      url: '../logs/index',
+      url: '../logs/index'
+    });
+  },
+  test2() {
+    this.setData({
+      gData: nx.stringify(nx.$memory.userInfo, null, 2)
     });
   },
   async onLoad() {
     await delay();
-
     // 调用应用实例的方法获取全局数据
-    app.getUserInfo((userInfo) => {
+    nx.$app.getUserInfo((userInfo) => {
       // 更新数据
-      this.setData({userInfo});
+      this.setData({ userInfo });
     });
-  },
+  }
 });
