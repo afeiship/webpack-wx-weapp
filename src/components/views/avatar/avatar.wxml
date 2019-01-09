@@ -1,5 +1,11 @@
 <view class="inner">
   <text>{{innerText}}</text>
   <text class="{{className}}">PADDING - TEST = [{{className}}]</text>
+  <view>
+    text from redux-memory: {{ memory.test }}
+  </view>
+  <view>
+    text from redux-local: {{ local.test }}
+  </view>
   <image src="{{img}}"  class="cRed wp-1" />
 </view>

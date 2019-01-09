@@ -1,5 +1,8 @@
 
 <view class="cBlue container">
+  <view>
+    text from redux-memory(USER): {{ memory.test }}
+  </view>
   <image class="avatar" src="{{avatarUrl}}" background-size="cover"></image>
   <text class="nickname">{{nickName}}</text>
 </view>

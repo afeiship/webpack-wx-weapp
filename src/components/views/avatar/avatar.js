@@ -1,8 +1,8 @@
-Component({
+nx.Component({
   properties: {
     innerText: {
       type: String,
-      value: 'default value',
+      value: 'default value'
     },
     img: {
       type: String,
@@ -12,5 +12,5 @@ Component({
       type: String,
       value: 'cRed'
     }
-  },
+  }
 });

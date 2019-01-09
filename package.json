@@ -4,6 +4,7 @@
   "description": "Webpack for weapp(wechat).",
   "private": true,
   "scripts": {
+    "upgrade": "./build/upgrade.sh",
     "clean": "rimraf dist",
     "predll": "npm run clean",
     "dll": "webpack --config webpack.config.dll.babel.js",

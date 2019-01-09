@@ -1,12 +1,12 @@
-Component({
-	properties: {
-		avatarUrl: {
-			type: String,
-			value: 'none',
-		},
-		nickName: {
-			type: String,
-			value: '-',
-		},
-	},
+nx.Component({
+  properties: {
+    avatarUrl: {
+      type: String,
+      value: 'none'
+    },
+    nickName: {
+      type: String,
+      value: '-'
+    }
+  }
 });

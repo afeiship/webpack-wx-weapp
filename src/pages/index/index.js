@@ -20,7 +20,7 @@ nx.Page({
   },
   test2() {
     this.setData({
-      gData: nx.stringify(nx.$memory.userInfo, null, 2)
+      gData: nx.stringify(nx.$global.userInfo, null, 2)
     });
   },
   async onLoad() {

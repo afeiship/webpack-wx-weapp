@@ -2,6 +2,17 @@ import { $storage } from '#';
 import 'next-weapp-boot';
 
 nx.App({
+  initialState(inStorage) {
+    return {
+      memory: {
+        test: 123
+      },
+      local: {
+        testloca: 'str',
+        obj: { test: 'sdfdf' }
+      }
+    };
+  },
   onLaunch() {
     console.log(nx, nx.VERSION, $storage);
     // 调用API从本地缓存中获取数据
