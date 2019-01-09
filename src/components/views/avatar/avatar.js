@@ -6,7 +6,7 @@ nx.Component({
     },
     img: {
       type: String,
-      value: require('#images/face.png')
+      value: require('images/face.png')
     },
     className: {
       type: String,

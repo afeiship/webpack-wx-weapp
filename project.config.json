@@ -1,32 +1,32 @@
 {
-  "description": "Webapck mini program",
-  "setting": {
-    "urlCheck": false,
-    "es6": false,
-    "postcss": true,
-    "minified": true,
-    "newFeature": true
-  },
-  "miniprogramRoot": "./dist/",
-  "compileType": "miniprogram",
-  "appid": "YOUR_APP_ID",
-  "projectname": "webpack-wx-weapp",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  }
+	"description": "Webapck mini program",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"miniprogramRoot": "dist/",
+	"compileType": "miniprogram",
+	"appid": "wxf8d76e8349acfac0",
+	"projectname": "webpack-wx-weapp",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
 }

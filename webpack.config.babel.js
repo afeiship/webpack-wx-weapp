@@ -1,35 +1,26 @@
-import {resolve} from 'path';
-import {
-  EnvironmentPlugin,
-  IgnorePlugin,
-  optimize, ProvidePlugin,
-} from 'webpack';
-import WXAppWebpackPlugin, {Targets} from 'wxapp-webpack-plugin';
+import { resolve } from 'path';
+import { EnvironmentPlugin, IgnorePlugin, optimize, ProvidePlugin } from 'webpack';
+import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 
-const {NODE_ENV} = process.env;
+const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
 
-
 export default (env = {}) => {
-
   const relativeFileLoader = (ext = '[ext]') => {
     return {
       loader: 'file-loader',
       options: {
         useRelativePath: true,
         name: `[name].${ext}`,
-        context: srcDir,
-      },
+        context: srcDir
+      }
     };
   };
 
   return {
     entry: {
-      app: [
-        'es6-promise/dist/es6-promise.auto.js',
-        './src/app.js',
-      ]
+      app: ['es6-promise/dist/es6-promise.auto.js', './src/app.js']
     },
     resolveLoader: {
       modules: ['./build/loaders', 'node_modules']
@@ -37,22 +28,20 @@ export default (env = {}) => {
     output: {
       filename: '[name].js',
       publicPath: '/',
-      path: resolve(__dirname, 'dist'),
+      path: resolve(__dirname, 'dist')
     },
     target: Targets.Wechat,
     module: {
       rules: [
         {
           test: /\.js$/,
-          exclude: /node_modules/,
           use: ['babel-loader'],
+          include: [resolve(__dirname, 'src'), resolve(__dirname, 'node_modules/next-weapp-boot')]
         },
         {
           test: /\.(wxss)$/,
           include: /src/,
-          use: [
-            relativeFileLoader(),
-          ]
+          use: [relativeFileLoader()]
         },
         {
           test: /\.(scss)$/,
@@ -62,23 +51,19 @@ export default (env = {}) => {
             {
               loader: 'string-replace-loader',
               options: {
-                multiple: [
-                  {search: '/*@import "/app.wxss";*/', replace: '@import "/app.wxss";'},
-                ]
+                multiple: [{ search: '/*@import "/app.wxss";*/', replace: '@import "/app.wxss";' }]
               }
             },
             {
-              loader: 'postcss-loader',
+              loader: 'postcss-loader'
             },
             {
               loader: 'sass-loader',
               options: {
-                includePaths: [
-                  resolve('src', './assets/styles')
-                ],
-              },
-            },
-          ],
+                includePaths: [resolve('src', './assets/styles')]
+              }
+            }
+          ]
         },
         {
           test: /\.(png|jpg|gif)$/,
@@ -88,14 +73,14 @@ export default (env = {}) => {
             options: {
               useRelativePath: true,
               name: `[name]_[hash].[ext]`,
-              context: srcDir,
-            },
-          },
+              context: srcDir
+            }
+          }
         },
         {
           test: /\.(json)$/,
           include: /src/,
-          use: relativeFileLoader(),
+          use: relativeFileLoader()
         },
         {
           test: /\.(wxml)$/,
@@ -107,15 +92,15 @@ export default (env = {}) => {
               options: {
                 root: srcDir,
                 enforceRelativePath: false
-              },
+              }
             }
-          ],
-        },
-      ],
+          ]
+        }
+      ]
     },
     plugins: [
       new EnvironmentPlugin({
-        NODE_ENV: 'development',
+        NODE_ENV: 'development'
       }),
       new ProvidePlugin({
         nx: 'next-js-core2'
@@ -125,23 +110,24 @@ export default (env = {}) => {
         commonModuleName: 'common.js'
       }),
       new optimize.ModuleConcatenationPlugin(),
-      new IgnorePlugin(/vertx/),
+      new IgnorePlugin(/vertx/)
     ],
     devtool: isDev ? 'source-map' : false,
     resolve: {
       extensions: ['.js', '.json', '.scss'],
       alias: {
+        '@': resolve(__dirname, './src'),
         '#': resolve(__dirname, './src/components'),
-        '#images': resolve(__dirname, './src/assets/images'),
-        '#styles': resolve(__dirname, './src/assets/styles'),
-        'services': resolve(__dirname, './src/components/services'),
-        'interceptors': resolve(__dirname, './src/components/interceptors')
+        mixins: resolve(__dirname, './src/components/mixins'),
+        images: resolve(__dirname, './src/assets/images'),
+        styles: resolve(__dirname, './src/assets/styles'),
+        services: resolve(__dirname, './src/components/services'),
+        interceptors: resolve(__dirname, './src/components/interceptors')
       }
     },
     watchOptions: {
       ignored: /dist|manifest/,
-      aggregateTimeout: 300,
+      aggregateTimeout: 300
     }
   };
-
 };
