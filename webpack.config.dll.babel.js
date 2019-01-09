@@ -1,14 +1,8 @@
-import {resolve} from 'path';
-import {
-  EnvironmentPlugin,
-  IgnorePlugin,
-  optimize, ProvidePlugin,
-} from 'webpack';
+import { resolve } from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 const extractCss = new ExtractTextPlugin('app.wxss');
 
 export default (env = {}) => {
-
   return {
     entry: {
       app: './src/assets/styles/index.scss'
@@ -19,7 +13,7 @@ export default (env = {}) => {
     output: {
       filename: 'app.wxss',
       publicPath: '/',
-      path: resolve(__dirname, 'dist'),
+      path: resolve(__dirname, 'dist')
     },
     module: {
       rules: [
@@ -33,19 +27,14 @@ export default (env = {}) => {
               {
                 loader: 'sass-loader',
                 options: {
-                  includePaths: [
-                    resolve('src', './assets/styles')
-                  ],
-                },
+                  includePaths: [resolve('src', './assets/styles')]
+                }
               }
             ]
           })
         }
-      ],
+      ]
     },
-    plugins: [
-      extractCss
-    ]
+    plugins: [extractCss]
   };
-
 };
