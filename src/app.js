@@ -1,9 +1,11 @@
-import { $store } from '#';
+import { $storage } from '#';
+import 'next-weapp-boot';
 
-App({
+nx.App({
   onLaunch() {
-    console.log(nx, nx.VERSION, $store);
+    console.log(nx, nx.VERSION, $storage);
     // 调用API从本地缓存中获取数据
+    nx.GLOBAL.$storage = $storage;
     const logs = wx.getStorageSync('logs') || [];
     logs.unshift(Date.now());
     wx.setStorageSync('logs', logs);
@@ -11,8 +13,7 @@ App({
   getUserInfo(cb) {
     if (this.globalData.userInfo) {
       typeof cb === 'function' && cb(this.globalData.userInfo);
-    }
-    else {
+    } else {
       // 调用登录接口
       wx.login({
         success: () => {
@@ -20,13 +21,13 @@ App({
             success: (res) => {
               this.globalData.userInfo = res.userInfo;
               typeof cb === 'function' && cb(this.globalData.userInfo);
-            },
+            }
           });
         }
       });
     }
   },
   globalData: {
-    userInfo: null,
-  },
+    userInfo: null
+  }
 });

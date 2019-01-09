@@ -1,19 +1,20 @@
-export default class Config {
-
+export default class {
   static IMG_URL = 'http://testimg.demo.cn';
   static APIS = {
-    baseUrl: `http://192.168.1.238:8080`,
-    items: {
-      '/backend': {
-        // global:
-        'login': ['post', '/adminUser/login'],
-        'logout': ['post', '/adminUser/logout']
+    host: 'http://dev.demo.cn',
+    request: ['/api/vi', 'json'],
+    items: [
+      {
+        items: {
+          upload: ['post', '/system/upload'],
+          login: ['post', '/auth/admin/signin'],
+          subscription_index: ['get', '/system/subscription'],
+          subscription_create: ['post', '/system/subscription'],
+          subscription_delete: ['delete', '/system/subscription/{id}'],
+          subscription_update: ['delete', '/system/subscription/{id}']
+        }
       }
-    }
+    ]
   };
   static MONKEY_BUSY_MSG = '程序猿开紧张开发中...';
-
 }
-
-
-
