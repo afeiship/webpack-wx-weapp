@@ -25,7 +25,7 @@ nx.Page({
   },
   lifetimes: {
     load() {
-      console.log('page start load');
+      console.log('page start load', this.data);
       console.log('wait 1s, page onload?');
       // 调用应用实例的方法获取全局数据
       nx.$app.getUserInfo((userInfo) => {

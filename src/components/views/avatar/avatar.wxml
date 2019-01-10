@@ -2,7 +2,7 @@
   <text>{{innerText}}</text>
   <text class="{{className}}">PADDING - TEST = [{{className}}]</text>
   <view>
-    text from redux-memory: {{ memory.test }}
+    text from redux-memory(Component Avatar): {{ memory.test }}
   </view>
   <view>
     text from redux-local: {{ local.test }}

@@ -6,6 +6,9 @@
     <user ref="user1" avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
     <avatar />
   </view>
+  <view>
+    text from redux-memory(PAGE-index): {{ memory.test }}
+  </view>
   <view class="motto">
     <template is="motto" data="{{motto:motto}}" />
   </view>
