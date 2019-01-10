@@ -1,5 +1,6 @@
 <view class="inner">
-  <text>{{innerText}}</text>
+  <text>source:-{{a}}</text>
+  <button bindtap="test1">computed:-{{b}}</button>
   <text class="{{className}}">PADDING - TEST = [{{className}}]</text>
   <view>
     text from redux-memory(Component Avatar): {{ memory.test }}

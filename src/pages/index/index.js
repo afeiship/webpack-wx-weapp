@@ -1,4 +1,5 @@
 const delay = (t = 0) => new Promise((resolve) => setTimeout(resolve, t));
+import { $route } from '#';
 
 nx.Page({
   data: {
@@ -8,15 +9,11 @@ nx.Page({
   },
   // 事件处理函数
   methods: {
-    bindViewTap() {
-      wx.navigateTo({
-        url: '../logs/index'
-      });
-    },
     test1() {
       console.log('test1');
-      wx.navigateTo({
-        url: '../logs/index'
+      // $route.go('/pages/logs/index')
+      $route.to('logs').then((_) => {
+        console.log('success go!');
       });
     },
     test2() {
@@ -25,7 +22,7 @@ nx.Page({
   },
   lifetimes: {
     load() {
-      console.log('page start load', this.data);
+      console.log('page start load', this.data, $route);
       console.log('wait 1s, page onload?');
       // 调用应用实例的方法获取全局数据
       nx.$app.getUserInfo((userInfo) => {

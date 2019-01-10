@@ -1,6 +1,12 @@
+import { $route } from '#';
 nx.Page({
   data: {
     logs: []
+  },
+  methods: {
+    back() {
+      $route.back();
+    }
   },
   lifetimes: {
     load() {

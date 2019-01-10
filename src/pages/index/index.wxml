@@ -2,13 +2,13 @@
 <import src="/components/views/motto/motto.wxml"/>
 
 <view class="container cRed">
-  <view bindtap="bindViewTap">
+  <view>
     <user ref="user1" avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
     <avatar />
   </view>
-  <view>
-    text from redux-memory(PAGE-index): {{ memory.test }}
-  </view>
+  <button type="primary" bindtap="test1">
+    text from redux-memory(PAGE-index[route to logs]): {{ memory.test }}
+  </button>
   <view class="motto">
     <template is="motto" data="{{motto:motto}}" />
   </view>
