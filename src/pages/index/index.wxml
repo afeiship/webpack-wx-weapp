@@ -6,6 +6,7 @@
     <user ref="user1" avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
     <avatar />
   </view>
+  <button bindtap="showSheet">Show ActionSheet</button>
   <button type="primary" bindtap="test1">
     text from redux-memory(PAGE-index[route to logs]): {{ memory.test }}
   </button>

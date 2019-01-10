@@ -18,6 +18,18 @@ nx.Page({
     },
     test2() {
       console.log('set global data');
+    },
+    showSheet() {
+      nx.wx
+        .actions({
+          itemList: ['A', 'B', 'C'],
+          complete() {
+            console.log('sheet complete.');
+          }
+        })
+        .then((res) => {
+          console.log(res);
+        });
     }
   },
   lifetimes: {

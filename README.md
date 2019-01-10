@@ -11,7 +11,7 @@
 - [x] use `nx.App/Page/Component` enhanced wxapp
 - [x] redux: redux globalData shared [nx.\$app/\$memory/\$local]
 - [x] enhanced: mixins/observe/redux
-- [ ] alert/confirm/toast Basic component
+- [x] alert/confirm/toast Basic component
 
 ## weapp-boot:
 - https://github.com/afeiship/next-weapp-boot
