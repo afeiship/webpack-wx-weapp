@@ -1,8 +1,6 @@
-import {$config} from '#';
-
+import { $config } from '#';
 
 export default class {
-
   static instance = null;
 
   static start(inMethod, inUrl, inData) {
@@ -20,7 +18,7 @@ export default class {
   }
 
   dispatch() {
-    const {APIS} = $config;
+    const { APIS } = $config;
     this._api = this._url.split(APIS.baseUrl + '/')[1];
     this._filter = `$${nx.underscored(this._api)}`;
   }
@@ -29,8 +27,7 @@ export default class {
     //TODO: common filter.
   }
 
-  end(){
+  end() {
     //template method:
   }
-
 }

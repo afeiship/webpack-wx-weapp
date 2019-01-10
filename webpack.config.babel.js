@@ -39,6 +39,13 @@ export default (env = {}) => {
           include: [resolve(__dirname, 'src'), resolve(__dirname, 'node_modules/next-weapp-boot')]
         },
         {
+          test: /config\.js$/,
+          loader: 'string-replace-loader',
+          options: {
+            multiple: [{ search: '__BUILD_ENV__', replace: NODE_ENV }]
+          }
+        },
+        {
           test: /\.(wxss)$/,
           include: /src/,
           use: [relativeFileLoader()]
@@ -118,6 +125,7 @@ export default (env = {}) => {
       alias: {
         '@': resolve(__dirname, './src'),
         '#': resolve(__dirname, './src/components'),
+        environments: resolve(__dirname, './src/environments'),
         mixins: resolve(__dirname, './src/components/mixins'),
         images: resolve(__dirname, './src/assets/images'),
         styles: resolve(__dirname, './src/assets/styles'),

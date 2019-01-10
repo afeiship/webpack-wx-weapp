@@ -5,7 +5,7 @@ const WeappInteraction = nx.declare({
   methods: {
     init() {
       ['actions', 'alert', 'confirm', 'modal', 'loading', 'toast'].forEach((item) => {
-        nx.set(nx, `wx.${item}`, this[item]);
+        nx.set(nx, `wii.${item}`, this[item]);
       });
     }
   }

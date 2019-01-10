@@ -1,14 +1,14 @@
-import NxWeappRequest from "next-weapp-request";
-import "next-content-type";
-import "next-param";
-import { Request, Response, Error } from "interceptors";
+import NxWeappRequest from 'next-weapp-request';
+import 'next-content-type';
+import 'next-param';
+import { Request, Response, Error } from 'interceptors';
 
 const Http = nx.declare({
   extends: NxWeappRequest,
   methods: {
     getHeaders: function() {
       return {
-        "content-type": nx.contentType("urlencoded")
+        'content-type': nx.contentType('urlencoded')
       };
     },
     setResponseInterceptor: function(inMethod, inUrl, inData, inOptions) {

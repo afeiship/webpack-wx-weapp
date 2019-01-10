@@ -10,7 +10,7 @@
     "dll": "webpack --config webpack.config.dll.babel.js",
     "predev": "npm run dll",
     "prebuild": "npm run dll",
-    "dev": "webpack --watch",
+    "dev": "cross-env NODE_ENV=development webpack --watch",
     "build": "cross-env NODE_ENV=production webpack -p"
   },
   "main": "dist/app.js",

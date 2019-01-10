@@ -1,7 +1,8 @@
+const ENV = require(`environments/__BUILD_ENV__`).default;
+
 export default class {
-  static IMG_URL = 'http://testimg.demo.cn';
   static APIS = {
-    host: 'http://dev.demo.cn',
+    host: ENV.HOST,
     request: ['/api/vi', 'json'],
     items: [
       {

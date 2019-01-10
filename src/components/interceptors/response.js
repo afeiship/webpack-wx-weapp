@@ -1,7 +1,6 @@
 import Abstract from './abstract';
 
 export default class extends Abstract {
-
   get data() {
     return nx.path(this._data, 'data.data');
   }

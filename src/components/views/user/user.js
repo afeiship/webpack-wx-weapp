@@ -16,9 +16,9 @@ nx.Component({
       console.log('user component created...');
     }
   },
-  methods:{
-    m1(){
-      console.log('user. method m1')
+  methods: {
+    m1() {
+      console.log('user. method m1');
     }
   }
 });

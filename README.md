@@ -2,7 +2,7 @@
 > Webpack for weapp.
 
 ## features:
-- [ ] webpack 4.x (wxapp-webpack-plugin `THIS BUGGY`)
+- [ ] webpack 4.x (wxapp-webpack-plugin `THIS BUGGY` -> 3.x)
 - [x] eslint + prettier
 - [x] postcss + sass + px2rpx
 - [x] basic API + Storage
@@ -12,20 +12,3 @@
 - [x] redux: redux globalData shared [nx.\$app/\$memory/\$local]
 - [x] enhanced: mixins/observe/redux
 - [x] alert/confirm/toast Basic component
-
-## weapp-boot:
-- https://github.com/afeiship/next-weapp-boot
-
-## interactions:
-- https://github.com/afeiship/next-weapp-interaction
-
-## route:
-- https://github.com/afeiship/next-weapp-route
-
-## generator:
-+ https://github.com/afeiship/generator-weapp
-  
-  ```bash
-  yo weapp:page --d=src/pages
-  yo weapp:component --d=src/components/views
-  ```

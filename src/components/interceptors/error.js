@@ -1,5 +1,3 @@
 import Abstract from './abstract';
 
-export default class  extends Abstract {
-
-}
+export default class extends Abstract {}

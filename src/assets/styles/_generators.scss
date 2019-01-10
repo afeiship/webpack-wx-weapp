@@ -7,7 +7,7 @@ $colors: (
   6: #666,
   8: #888,
   9: #999,
-  green: "#4cd964",
+  green: '#4cd964',
   red: #d00,
   gold: #ad8661,
   orange: #fc6e22,
@@ -44,9 +44,9 @@ $width-list: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @include generator-width-wp($width-list);
 @include generator-width-w1($width-list);
-@include generator-font-size-rpx($font-size-list, ".f");
+@include generator-font-size-rpx($font-size-list, '.f');
 @include generator-blank-rpx($blank-list);
 @include generator-border-radius($border-radius-list);
-@include generator-line-clamp($line-clamp-list, ".lc-");
+@include generator-line-clamp($line-clamp-list, '.lc-');
 @include generator-line-height-rpx($line-height);
 @include generator-hlh-rpx($line-height);
