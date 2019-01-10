@@ -16,6 +16,9 @@
 ## weapp-boot:
 - https://github.com/afeiship/next-weapp-boot
 
+## interactions:
+- https://github.com/afeiship/next-weapp-interaction
+
 ## generator:
 + https://github.com/afeiship/generator-weapp
   
