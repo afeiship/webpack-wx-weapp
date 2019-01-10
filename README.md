@@ -1,9 +1,6 @@
 # webpack-wx-weapp
 > Webpack for weapp.
 
-## generator:
-+ https://github.com/afeiship/generator-weapp
-
 ## features:
 - [ ] webpack 4.x (wxapp-webpack-plugin `THIS BUGGY`)
 - [x] eslint + prettier
@@ -16,10 +13,13 @@
 - [x] enhanced: mixins/observe/redux
 - [ ] alert/confirm/toast Basic component
 
+## weapp-boot:
+- https://github.com/afeiship/next-weapp-boot
 
-
-## generator usage:
-```bash
-yo weapp:page --d=src/pages
-yo weapp:component --d=src/components/views
-```
+## generator:
++ https://github.com/afeiship/generator-weapp
+  
+  ```bash
+  yo weapp:page --d=src/pages
+  yo weapp:component --d=src/components/views
+  ```
