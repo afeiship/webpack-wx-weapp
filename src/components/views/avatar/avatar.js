@@ -12,5 +12,10 @@ nx.Component({
       type: String,
       value: 'cRed'
     }
+  },
+  methods: {
+    m1() {
+      console.log('avatar metod1');
+    }
   }
 });

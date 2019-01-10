@@ -15,5 +15,10 @@ nx.Component({
       console.log(this, this.test1);
       console.log('user component created...');
     }
+  },
+  methods:{
+    m1(){
+      console.log('user. method m1')
+    }
   }
 });
