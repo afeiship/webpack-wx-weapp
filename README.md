@@ -19,6 +19,9 @@
 ## interactions:
 - https://github.com/afeiship/next-weapp-interaction
 
+## route:
+- https://github.com/afeiship/next-weapp-route
+
 ## generator:
 + https://github.com/afeiship/generator-weapp
   
