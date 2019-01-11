@@ -20,7 +20,7 @@ nx.Page({
       console.log('set global data');
     },
     showSheet() {
-      nx.wii.actions({
+      nx.wx.actions({
         itemList: ['A', 'B', 'C'],
         complete() {
           console.log('sheet complete.');
