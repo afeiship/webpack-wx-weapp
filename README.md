@@ -1,5 +1,5 @@
 # webpack-wx-weapp
-> Webpack for weapp.
+> Webpack for weapp(wechat).
 
 ## features:
 - [ ] webpack 4.x (wxapp-webpack-plugin `THIS BUGGY` -> 3.x)
