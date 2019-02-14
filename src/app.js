@@ -1,7 +1,10 @@
-import { $storage } from '#';
+import { $storage, $config } from '#';
 import 'next-weapp-boot';
 
 nx.App({
+  $config: {
+    prefix: $config.STORE_PREFIX
+  },
   initialState(inStorage) {
     return {
       memory: {

@@ -17,5 +17,6 @@ export default class {
       }
     ]
   };
+  static STORE_PREFIX = 'wx-weapp';
   static MONKEY_BUSY_MSG = '程序猿开紧张开发中...';
 }
