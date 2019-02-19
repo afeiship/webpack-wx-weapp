@@ -9,7 +9,7 @@
 	},
 	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
-	"appid": "wxf8d76e8349acfac0",
+	"appid": "wxd697e045473f63ad",
 	"projectname": "webpack-wx-weapp",
 	"condition": {
 		"search": {

@@ -1,3 +1,3 @@
 export default {
-  HOST: 'http://dev.demo.cn'
+  HOST: 'https://tu-dev.finxos.com'
 };

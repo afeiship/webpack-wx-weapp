@@ -1,4 +1,4 @@
-import { $storage, $config } from '#';
+import { $storage, $config, $api } from '#';
 import 'next-weapp-boot';
 
 nx.App({
@@ -11,35 +11,21 @@ nx.App({
         test: 123
       },
       local: {
-        testloca: 'str',
-        obj: { test: 'sdfdf' }
+        auth: {}
       }
     };
   },
   onLaunch() {
-    console.log(nx, nx.VERSION, $storage);
-    // 调用API从本地缓存中获取数据
-    nx.GLOBAL.$storage = $storage;
-    const logs = wx.getStorageSync('logs') || [];
-    logs.unshift(Date.now());
-    wx.setStorageSync('logs', logs);
-  },
-  getUserInfo(cb) {
-    if (this.globalData.userInfo) {
-      typeof cb === 'function' && cb(this.globalData.userInfo);
-    } else {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.globalData.userInfo = res.userInfo;
-              typeof cb === 'function' && cb(this.globalData.userInfo);
-            }
-          });
-        }
-      });
-    }
+    wx.login({
+      success({ code }) {
+        const data = nx.mix({ code }, $config.APP_CONFIG);
+        $api.signin(data).then((auth) => {
+          nx.$local = {
+            auth
+          };
+        });
+      }
+    });
   },
   globalData: {
     test: 123,

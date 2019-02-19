@@ -5,7 +5,8 @@ nx.Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    gData: null
+    gData: null,
+    auth: {}
   },
   // 事件处理函数
   methods: {
@@ -30,12 +31,9 @@ nx.Page({
   },
   lifetimes: {
     load() {
-      console.log('page start load', this.data, $route);
-      console.log('wait 1s, page onload?');
-      // 调用应用实例的方法获取全局数据
-      nx.$app.getUserInfo((userInfo) => {
-        // 更新数据
-        this.setData({ userInfo });
+      const { auth } = nx.$local;
+      this.setData({
+        auth: JSON.stringify(auth)
       });
     }
   }
