@@ -1,9 +1,11 @@
+import { $theme } from '#';
+
 nx.Component({
   mixins: ['mixin1', 'mixin2'],
   properties: {
     avatarUrl: {
       type: String,
-      value: 'none'
+      value: $theme.get('user', 'avatarUrl')
     },
     nickName: {
       type: String,

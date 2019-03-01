@@ -1,0 +1,12 @@
+{
+  "wxConfig": {
+    "app_id": "wx123123lsljjlsdjF"
+  },
+  "appConfig": {
+    "app_type": "xxxx",
+    "app_secret": "f3f59743-7dea-41be-9097-1527980b6312",
+    "from": "wechatms",
+    "platform": "wechat"
+  },
+  "theme": "default"
+}

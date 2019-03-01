@@ -46,6 +46,20 @@ export default (env = {}) => {
           }
         },
         {
+          test: /theme\.js$/,
+          loader: 'string-replace-loader',
+          options: {
+            multiple: [
+              {
+                search: '__THEME_CONFIG__',
+                replace: JSON.stringify(
+                  require(resolve(__dirname, 'src/components/themes/default.json'))
+                )
+              }
+            ]
+          }
+        },
+        {
           test: /\.(wxss)$/,
           include: /src/,
           use: [relativeFileLoader()]

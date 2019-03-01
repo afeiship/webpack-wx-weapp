@@ -2,6 +2,7 @@
 <import src="/components/views/motto/motto.wxml"/>
 
 <view class="container cRed">
+  <user/>
   <textarea class="token" maxlength="-1" auto-height value="{{ auth }}"/>
   <view>
     <user ref="user1" avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
