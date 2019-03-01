@@ -1,11 +1,9 @@
 import { $interaction, $http, $config } from '#';
-const themConfig = JSON.parse('__THEME_CONFIG__');
-
-console.log(themConfig);
+import ThemeJson from '../themes/default.json';
 
 export default class {
   static get(inKey, inPath) {
-    const compCfg = themConfig[inKey];
+    const compCfg = ThemeJson[inKey];
     return !inPath ? compCfg : nx.get(compCfg, inPath);
   }
 }

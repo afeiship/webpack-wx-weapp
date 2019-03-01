@@ -67,6 +67,7 @@
     "next-weapp-route": "github:afeiship/next-weapp-route",
     "next-weapp-storage": "github:afeiship/next-weapp-storage",
     "next-weapp-toast": "github:afeiship/next-weapp-toast",
+    "raw-loader": "^1.0.0",
     "weapp-sassui-short-name": "github:afeiship/weapp-sassui-short-name",
     "webkit-sass-flexbox-grid": "github:afeiship/webkit-sass-flexbox-grid",
     "webkit-sass-functions": "github:afeiship/webkit-sass-functions",

@@ -14,7 +14,6 @@ nx.Component({
   },
   lifetimes: {
     created() {
-      console.log(this, this.test1);
       console.log('user component created...');
     }
   },

@@ -101,7 +101,13 @@ export default (env = {}) => {
         {
           test: /\.(json)$/,
           include: /src/,
-          use: relativeFileLoader()
+          exclude: /themes/,
+          use: [relativeFileLoader()]
+        },
+        {
+          test: /\.(json)$/,
+          include: /themes/,
+          use: [{ loader: 'json-loader' }]
         },
         {
           test: /\.(wxml)$/,
