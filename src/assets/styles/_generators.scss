@@ -7,13 +7,8 @@ $colors: (
   6: #666,
   8: #888,
   9: #999,
-  green: '#4cd964',
-  red: #d00,
-  gold: #ad8661,
-  orange: #fc6e22,
-  blue: #38a0f5,
-  blue-a: #1d2b40,
-  gray: #98a2b5
+  primary: color('primary.default'),
+  gray: color('gray')
 );
 
 $margin-list: (2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 40, 50);

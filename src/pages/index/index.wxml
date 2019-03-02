@@ -2,6 +2,13 @@
 <import src="/components/views/motto/motto.wxml"/>
 
 <view class="container cRed">
+  <view class="c-primary">
+    PRIMARY - COLOR
+  </view>
+  <view class="c-gray">
+    Gray - Text
+  </view>
+  <view class="blank">BLANK</view>
   <user/>
   <textarea class="token" maxlength="-1" auto-height value="{{ auth }}"/>
   <view>

@@ -2,9 +2,11 @@
   "variables": {
     "color": {
       "primary": {
+        "default": "#007aff",
         "dark": "#f60",
         "light": "#eee"
-      }
+      },
+      "gray": "#999"
     }
   },
   "components": {
