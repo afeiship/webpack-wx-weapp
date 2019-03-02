@@ -5,6 +5,9 @@ import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
+const sassVars = require(__dirname + '/src/themes/default.json').variables;
+const sass = require('node-sass');
+const sassUtils = require('node-sass-utils')(sass);
 
 export default (env = {}) => {
   const relativeFileLoader = (ext = '[ext]') => {
@@ -67,7 +70,19 @@ export default (env = {}) => {
             {
               loader: 'sass-loader',
               options: {
-                includePaths: [resolve('src', './assets/styles')]
+                includePaths: [resolve('src', './assets/styles')],
+                functions: {
+                  'get($keys)': function(keys) {
+                    keys = keys.getValue().split('.');
+                    let result = sassVars;
+                    let i;
+                    for (i = 0; i < keys.length; i++) {
+                      result = result[keys[i]];
+                    }
+                    result = sassUtils.castToSass(result);
+                    return result;
+                  }
+                }
               }
             }
           ]
@@ -132,6 +147,7 @@ export default (env = {}) => {
         '@': resolve(__dirname, './src'),
         '#': resolve(__dirname, './src/components'),
         environments: resolve(__dirname, './src/environments'),
+        themes: resolve(__dirname, './src/themes'),
         mixins: resolve(__dirname, './src/components/mixins'),
         images: resolve(__dirname, './src/assets/images'),
         styles: resolve(__dirname, './src/assets/styles'),

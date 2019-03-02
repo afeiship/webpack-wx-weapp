@@ -1,0 +1,19 @@
+{
+  "variables": {
+    "color": {
+      "primary": {
+        "light": "#eee"
+      }
+    }
+  },
+  "components": {
+    "user": {
+      "avatarUrl": "https://image-static.segmentfault.com/151/223/1512235645-5c77c9963220a_articlex"
+    },
+    "info-item-chart": {
+      "iconShare": "https://image-static.segmentfault.com/151/223/1512235645-5c77c9963220a_articlex",
+      "iconStar": "https://i.stack.imgur.com/tfWDY.png",
+      "iconClass": "c-primary tc"
+    }
+  }
+}
