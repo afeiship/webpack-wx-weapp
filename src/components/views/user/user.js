@@ -5,7 +5,7 @@ nx.Component({
   properties: {
     avatarUrl: {
       type: String,
-      value: $theme.get('user', 'avatarUrl')
+      value: $theme.get('user.avatarUrl')
     },
     nickName: {
       type: String,

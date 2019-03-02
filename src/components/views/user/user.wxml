@@ -1,4 +1,3 @@
-
 <view class="cBlue container">
   <view>
     text from redux-memory(USER): {{ memory.test }}
