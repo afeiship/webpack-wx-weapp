@@ -6,7 +6,7 @@ module.exports = {
     //   ],
     //   remove: true
     // }),
-    require('postcss-px2rpx'),
-    require('postcss-remove-prefixes')()
+    require('postcss-px2rpx')
+    // require('postcss-remove-prefixes')()
   ]
 };
