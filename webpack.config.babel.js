@@ -146,8 +146,9 @@ export default (env = {}) => {
       alias: {
         '@': resolve(__dirname, './src'),
         '#': resolve(__dirname, './src/components'),
+        config: resolve(__dirname, './src/config'),
         environments: resolve(__dirname, './src/environments'),
-        themes: resolve(__dirname, './src/themes'),
+        themes: resolve(__dirname, './src/config/themes'),
         mixins: resolve(__dirname, './src/components/mixins'),
         images: resolve(__dirname, './src/assets/images'),
         styles: resolve(__dirname, './src/assets/styles'),
