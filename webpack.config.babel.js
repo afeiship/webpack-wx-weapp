@@ -1,13 +1,11 @@
 import { resolve } from 'path';
 import { EnvironmentPlugin, IgnorePlugin, optimize, ProvidePlugin } from 'webpack';
 import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
-
+import nxSassGet from 'next-sass-get';
 const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
-const sassVars = require(__dirname + '/src/themes/default.json').variables;
-const sass = require('node-sass');
-const sassUtils = require('node-sass-utils')(sass);
+const sassVars = require(__dirname + '/src/config/themes/default.json').variables;
 
 export default (env = {}) => {
   const relativeFileLoader = (ext = '[ext]') => {
@@ -71,18 +69,7 @@ export default (env = {}) => {
               loader: 'sass-loader',
               options: {
                 includePaths: [resolve('src', './assets/styles')],
-                functions: {
-                  'get($keys)': function(keys) {
-                    keys = keys.getValue().split('.');
-                    let result = sassVars;
-                    let i;
-                    for (i = 0; i < keys.length; i++) {
-                      result = result[keys[i]];
-                    }
-                    result = sassUtils.castToSass(result);
-                    return result;
-                  }
-                }
+                functions: nxSassGet(sassVars)
               }
             }
           ]

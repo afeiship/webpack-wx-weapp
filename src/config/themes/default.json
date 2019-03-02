@@ -2,6 +2,7 @@
   "variables": {
     "color": {
       "primary": {
+        "dark": "#f60",
         "light": "#eee"
       }
     }
