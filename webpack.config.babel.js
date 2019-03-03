@@ -2,12 +2,14 @@ import { resolve } from 'path';
 import { EnvironmentPlugin, IgnorePlugin, optimize, ProvidePlugin } from 'webpack';
 import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 import nxSassGet from 'next-sass-get';
+import nxSassColor from 'next-sass-color';
 const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
-const sassVars = require(__dirname + '/src/config/themes/default.json').variables;
+const variables = require('./src/config/themes/default.json').variables;
 
 export default (env = {}) => {
+  console.log('args based on env:->', env);
   const relativeFileLoader = (ext = '[ext]') => {
     return {
       loader: 'file-loader',
@@ -69,7 +71,7 @@ export default (env = {}) => {
               loader: 'sass-loader',
               options: {
                 includePaths: [resolve('src', './assets/styles')],
-                functions: nxSassGet(sassVars)
+                functions: nx.mix(nxSassGet(variables), nxSassColor(variables.color))
               }
             }
           ]
@@ -129,7 +131,7 @@ export default (env = {}) => {
     ],
     devtool: isDev ? 'source-map' : false,
     resolve: {
-      extensions: ['.js', '.json', '.scss'],
+      extensions: ['.js', '.wxs', '.json', '.scss'],
       alias: {
         '@': resolve(__dirname, './src'),
         '#': resolve(__dirname, './src/components'),

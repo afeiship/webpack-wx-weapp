@@ -2,7 +2,7 @@
   "variables": {
     "color": {
       "primary": {
-        "default": "#007aff",
+        "default": "#4cd964",
         "dark": "#f60",
         "light": "#eee"
       },
@@ -11,7 +11,7 @@
   },
   "components": {
     "user": {
-      "avatarUrl": "https://image-static.segmentfault.com/151/223/1512235645-5c77c9963220a_articlex"
+      "avatarUrl": "http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg"
     },
     "info-item-chart": {
       "iconShare": "https://image-static.segmentfault.com/151/223/1512235645-5c77c9963220a_articlex",

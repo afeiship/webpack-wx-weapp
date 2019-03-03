@@ -1,6 +1,6 @@
 <view class="cBlue container">
   <view>
-    text from redux-memory(USER): {{ memory.test }}
+    <view class="c1">text from redux-memory(USER)</view>: {{ memory.test }}
   </view>
   <image class="avatar" src="{{ avatarUrl }}"></image>
   <text class="nickname">{{nickName}}</text>
