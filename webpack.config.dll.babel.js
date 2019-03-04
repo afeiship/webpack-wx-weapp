@@ -1,11 +1,12 @@
 import { resolve } from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import nx from 'next-js-core2';
-import nxSassColor from 'next-sass-color';
+import NxSassColor from 'next-sass-color';
 const extractCss = new ExtractTextPlugin('app.wxss');
 var sass = require('node-sass');
 var sassUtils = require('node-sass-utils')(sass);
 const variables = require('./src/config/themes/default.json').variables;
+
 
 export default (env = {}) => {
   return {
@@ -40,7 +41,7 @@ export default (env = {}) => {
                         return sassUtils.castToSass(nx.get(variables, path));
                       }
                     },
-                    nxSassColor(variables.color)
+                    NxSassColor.create(variables.color)
                   )
                 }
               }

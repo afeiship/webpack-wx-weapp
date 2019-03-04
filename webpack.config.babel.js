@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import { EnvironmentPlugin, IgnorePlugin, optimize, ProvidePlugin } from 'webpack';
 import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
 import nxSassGet from 'next-sass-get';
-import nxSassColor from 'next-sass-color';
+import NxSassColor from 'next-sass-color';
 const { NODE_ENV } = process.env;
 const isDev = NODE_ENV !== 'production';
 const srcDir = resolve('src');
@@ -71,7 +71,7 @@ export default (env = {}) => {
               loader: 'sass-loader',
               options: {
                 includePaths: [resolve('src', './assets/styles')],
-                functions: nx.mix(nxSassGet(variables), nxSassColor(variables.color))
+                functions: nx.mix(nxSassGet(variables), NxSassColor.create(variables.color))
               }
             }
           ]

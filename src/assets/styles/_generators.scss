@@ -10,7 +10,8 @@ $colors: (
   primary: get('color.primary.default'),
   primary-lighten: lighten(get('color.primary.default'), 10%),
   primary-50: rgba(get('color.primary.default'), 0.1),
-  red-70: rgba(#000, 0.7),
+  red-70: rgba(#f00, 0.7),
+  red-90: rgba(255, 0, 0, 0.8),
   gray: get('color.gray')
 );
 
