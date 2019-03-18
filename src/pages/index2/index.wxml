@@ -5,8 +5,8 @@
     <view class="fixed-header-hd">
       Fixed-header
     </view>
-    <view class="fixed-header-virtual-bd"></view>
-    <view class="fixed-header-bd">
+    <view class="fixed-header-virtual-bd {{ mini ? 'mini': ''}}"></view>
+    <view class="fixed-header-bd {{ mini ? 'mini': ''}}">
       INNER BOTTOM
     </view>
   <view class="c-primary">
