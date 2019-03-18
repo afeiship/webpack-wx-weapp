@@ -12,3 +12,8 @@
 - [x] redux: redux globalData shared [nx.\$app/\$memory/\$local]
 - [x] enhanced: mixins/observe/redux
 - [x] alert/confirm/toast Basic component
+
+
+## sticky: 
+- https://developers.weixin.qq.com/miniprogram/dev/api/IntersectionObserver.relativeToViewport.html
+- https://blog.csdn.net/sinat_36193631/article/details/82628935
