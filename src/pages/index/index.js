@@ -21,6 +21,9 @@ nx.Page({
     test2() {
       console.log('set global data');
     },
+    toWebs() {
+      $route.to('webs');
+    },
     showSheet() {
       nx.wx.actions({
         itemList: ['A', 'B', 'C'],

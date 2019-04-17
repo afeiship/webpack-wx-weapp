@@ -15,6 +15,7 @@
   <view class="c-gray">
     Gray - Text
   </view>
+  <button bindtap="toWebs" class="btn-action">To Webs</button>
   <image class="user-avatar" src="http://avatar.chsword.net/avatar/1"/>
   <view class="blank">BLANK</view>
   <user/>

@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/index2/index", "pages/index/index", "pages/logs/index"],
+  "pages": ["pages/index/index", "pages/index2/index", "pages/logs/index", "pages/webs/index"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
