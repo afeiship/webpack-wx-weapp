@@ -11,6 +11,8 @@
 	"compileType": "miniprogram",
 	"appid": "wx7a5df9538ff35b66",
 	"projectname": "webpack-wx-weapp",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

@@ -1,1 +1,1 @@
-<web-view bindmessage="onMsg" src="http://0.0.0.0:3000/"></web-view>
+<web-view bindmessage="onMsg" src="https://y.qq.com/portal/player.html"></web-view>

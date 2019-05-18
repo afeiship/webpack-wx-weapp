@@ -2,6 +2,7 @@
 <import src="/components/views/motto/motto.wxml"/>
 
 <view class="container cRed">
+
     <view class="fixed-header-hd">
       Fixed-header
     </view>
@@ -12,6 +13,9 @@
   <view class="c-primary">
     PRIMARY - COLOR
   </view>
+  <view>Rich Text start</view>
+  <rich-text nodes="{{ richText }}"/>
+  <view>Rich Text end</view>
   <view class="c-gray">
     Gray - Text
   </view>
