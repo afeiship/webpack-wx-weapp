@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/parser/index",
     "pages/parsers/index",
+    "pages/parser/index",
     "pages/index/index",
     "pages/webs/index",
     "pages/index2/index",

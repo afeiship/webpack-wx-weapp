@@ -13,8 +13,12 @@
       src="{{attributes.src}}"></video>
   </template>
 
-  <template name="html-text" wx:if="{{content}}">
+  <template name="html-text" wx:if="content">
     <text>{{content}}</text>
+  </template>
+
+  <template name="html-section">
+    <view>IAM Section</view>
   </template>
 
   <template name="html-br">
@@ -39,13 +43,15 @@
     <block wx:elif="{{item.tagName === 'img'}}">
       <template is="html-image" data="{{...item}}" />
     </block>
-    <block wx:elif="{{item.tagName === 'video'}}">
-      <template is="html-video" data="{{...item}}" />
+    <block wx:elif="{{item.tagName === 'tu-audio'}}">
+      <template is="html-audio" data="{{...item}}" />
     </block>
     <block wx:elif="{{item.tagName === 'br'}}">
       <template is="html-br"></template>
     </block>
-    <block wx:else></block>
+    <block wx:else>
+      <view>[NOT SUPPORT YET]</view>
+    </block>
   </template>
 
 
@@ -55,14 +61,20 @@
 
   <template name="html1">
     <block wx:if="{{tagName}}">
-      <block wx:for="{{children}}" wx:key="{{index}}">
-        <block wx:if="{{item.children.length}}">
-          <template is="html" data="{{...item}}"/>
+      <view class="{{ tagName }}">
+        <block wx:for="{{children}}" wx:key="{{index}}">
+          <block wx:if="{{item.children.length}}">
+            <view class="{{ item.tagName }}">
+              <block wx:for="{{children}}" wx:key="{{index}}">
+                <template is="html" data="{{...item}}"/>
+              </block>
+            </view>
+          </block>
+          <block wx:else>
+            <template is="html-item" data="{{item}}"/>
+          </block>
         </block>
-        <block wx:else>
-          <template is="html-item" data="{{item}}"/>
-        </block>
-      </block>
+      </view>
     </block>
   </template>
 
@@ -70,16 +82,20 @@
 
   <template name="html">
     <block wx:if="{{tagName}}">
-      <view>TAG: {{ children.length }}</view>
-      <block wx:for="{{children}}" wx:key="{{index}}">
-        <view> item.children.length: {{ item.children.length }}</view>
-        <block wx:if="{{item.children.length}}">
-          <template is="html1" data="{{...item}}"/>
+      <view class="{{ tagName }}">
+        <block wx:for="{{children}}" wx:key="{{index}}">
+          <block wx:if="{{item.children.length}}">
+            <view class="{{ item.tagName }}">
+              <block wx:for="{{children}}" wx:key="{{index}}">
+                <template is="html1" data="{{...item}}"/>
+              </block>
+            </view>
+          </block>
+          <block wx:else>
+            <template is="html-item" data="{{item}}"/>
+          </block>
         </block>
-        <block wx:else>
-          <template is="html-item" data="{{item}}"/>
-        </block>
-      </block>
+      </view>
     </block>
   </template>
 

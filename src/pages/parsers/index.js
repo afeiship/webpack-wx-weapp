@@ -1,40 +1,47 @@
 import { $route } from '#';
 nx.Page({
   data: {
-    imageData: {
-      type: 'element',
-      tagName: 'img',
-      attributes: {
-        src:
-          'https://developers.weixin.qq.com/miniprogram/assets/images/head_global_z_@2.png',
-        class: 'image'
-      }
-    },
-    audioData: {
-      attributes: {
-        class: 'wp-audio',
-        src: 'https://tsscdn.finxos.com/tu-resources/xlsfile/media/1.mp3'
-      }
-    },
     nodes: {
-      tagName: 'root',
+      type: 'element',
+      tagName: 'section',
       children: [
         {
           type: 'element',
           tagName: 'div',
           attributes: {
-            style: 'height:10rpx;width: 20rpx;'
+            style: 'height:10rpx;width: 20rpx; border:1px solid #f00;'
           },
           children: [
             {
               type: 'element',
+              tagName: 'tu-audio',
+              attributes: {
+                class: 'wp-audio',
+                src:
+                  'https://tsscdn.finxos.com/tu-resources/xlsfile/media/1.mp3'
+              }
+            },
+            {
+              type: 'element',
               tagName: 'img',
               attributes: {
-                src: 'http://xxx.jpg',
+                src: 'https://via.placeholder.com/200x100',
                 class: 'image'
               }
+            },
+            {
+              type: 'text',
+              content: 'I am text'
+            },
+            {
+              type: 'element',
+              tagName: 'tu-chart'
             }
           ]
+        },
+        {
+          type: 'text',
+          content: 'Just another text!!!'
         }
       ]
     }
