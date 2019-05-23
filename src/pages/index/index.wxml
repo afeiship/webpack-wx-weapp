@@ -10,6 +10,7 @@
     <view class="fixed-header-bd">
       INNER BOTTOM
     </view>
+  <rich-text nodes="{{ richWxml }}"/>
   <view class="c-primary">
     PRIMARY - COLOR
   </view>

@@ -1,0 +1,89 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <template name="html-image">
+    <image
+      mode="widthFix"
+      class="{{attributes.class}}"
+      src="{{attributes.src}}"></image>
+  </template>
+
+  <template name="html-video">
+    <video
+      class="{{attributes.class}}"
+      src="{{attributes.src}}"></video>
+  </template>
+
+  <template name="html-text" wx:if="{{content}}">
+    <text>{{content}}</text>
+  </template>
+
+  <template name="html-br">
+    <text>\n</text>
+  </template>
+
+  <template name="html-audio">
+    <audio
+      poster="http://avatar.chsword.net/avatar/1"
+      author="TSS"
+      src="{{attributes.src}}"
+      id="myAudio"
+      controls
+      loop
+    />
+  </template>
+
+  <template name="html-item">
+    <block wx:if="{{item.type === 'text'}}">
+      <template is="html-text" data="{{...item}}" />
+    </block>
+    <block wx:elif="{{item.tagName === 'img'}}">
+      <template is="html-image" data="{{...item}}" />
+    </block>
+    <block wx:elif="{{item.tagName === 'video'}}">
+      <template is="html-video" data="{{...item}}" />
+    </block>
+    <block wx:elif="{{item.tagName === 'br'}}">
+      <template is="html-br"></template>
+    </block>
+    <block wx:else></block>
+  </template>
+
+
+
+  <!--<template is="html-image" data="{{ ...imageData }}"></template>-->
+  <!--<template is="html-audio" data="{{ ...audioData }}"></template>-->
+
+  <template name="html1">
+    <block wx:if="{{tagName}}">
+      <block wx:for="{{children}}" wx:key="{{index}}">
+        <block wx:if="{{item.children.length}}">
+          <template is="html" data="{{...item}}"/>
+        </block>
+        <block wx:else>
+          <template is="html-item" data="{{item}}"/>
+        </block>
+      </block>
+    </block>
+  </template>
+
+
+
+  <template name="html">
+    <block wx:if="{{tagName}}">
+      <view>TAG: {{ children.length }}</view>
+      <block wx:for="{{children}}" wx:key="{{index}}">
+        <view> item.children.length: {{ item.children.length }}</view>
+        <block wx:if="{{item.children.length}}">
+          <template is="html1" data="{{...item}}"/>
+        </block>
+        <block wx:else>
+          <template is="html-item" data="{{item}}"/>
+        </block>
+      </block>
+    </block>
+  </template>
+
+
+
+  <template is="html" data="{{ ...nodes }}"></template>
+</view>

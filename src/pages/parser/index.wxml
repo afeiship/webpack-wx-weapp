@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <template name="html-image">
+    <image
+      mode="widthFix"
+      class="{{attributes.class}}"
+      src="{{attributes.src}}"></image>
+  </template>
+
+
+  <template name="html-audio">
+    <audio
+      poster="http://avatar.chsword.net/avatar/1"
+      author="TSS"
+      src="{{attributes.src}}"
+      id="myAudio"
+      controls
+      loop
+    />
+  </template>
+
+  <template is="html-image" data="{{ ...imageData }}"></template>
+  <template is="html-audio" data="{{ ...audioData }}"></template>
+
+</view>
