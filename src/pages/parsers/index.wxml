@@ -53,7 +53,7 @@
       <template is="html-br"></template>
     </block>
     <block wx:else>
-      <view hidden>[NOT SUPPORT YET]</view>
+      <view hidden>[ NOT SUPPORT YET ]</view>
     </block>
   </template>
 
