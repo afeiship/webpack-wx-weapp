@@ -1,0 +1,11 @@
+<template name="tu-audio">
+  <audio
+    poster="http://avatar.chsword.net/avatar/1"
+    author="TSS"
+    src="{{attrs.src}}"
+    class="tu-audio"
+    id="myAudio"
+    controls
+    loop
+  />
+</template>

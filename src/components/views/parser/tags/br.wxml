@@ -1,0 +1,3 @@
+<template name="html-br">
+  <text class="html-tag-br">\n</text>
+</template>

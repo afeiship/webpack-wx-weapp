@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "WXML解析器",
+  "usingComponents": {
+    "user": "../../components/views/user/user",
+    "tu-image": "../../components/views/tu-image/index"
+  }
+}

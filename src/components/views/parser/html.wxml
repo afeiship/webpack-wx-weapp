@@ -1,0 +1,68 @@
+<import src="tags/br.wxml" />
+<import src="tags/img.wxml" />
+<import src="tags/text.wxml" />
+<import src="components/tu-audio.wxml" />
+<import src="components/tu-chart.wxml" />
+
+
+<template name="html-item">
+  <block wx:if="{{item.type === 'text'}}">
+    <template is="html-text" data="{{...item}}" />
+  </block>
+  <block wx:elif="{{item.tagName === 'img'}}">
+    <template is="html-img" data="{{...item}}" />
+  </block>
+  <block wx:elif="{{item.tagName === 'br'}}">
+    <template is="html-br"></template>
+  </block>
+  <block wx:elif="{{item.tagName === 'tu-audio'}}">
+    <template is="tu-audio" data="{{...item}}" />
+  </block>
+  <block wx:elif="{{item.tagName === 'tu-chart'}}">
+    <template is="tu-chart" data="{{...item}}" />
+  </block>
+  <block wx:else>
+    <view hidden>[ NOT SUPPORT YET ]</view>
+  </block>
+</template>
+
+
+
+<template name="html-recursive">
+  <block wx:if="{{tagName}}">
+    <view class="html-tag-{{ tagName }} {{ attrs.class }}">
+      <block wx:for="{{children}}" wx:key="{{index}}">
+        <block wx:if="{{item.children.length}}">
+          <view class="html-tag-{{ item.tagName }}">
+            <block wx:for="{{children}}" wx:key="{{index}}">
+              <template is="html" data="{{...item}}"/>
+            </block>
+          </view>
+        </block>
+        <block wx:else>
+          <template is="html-item" data="{{item}}"/>
+        </block>
+      </block>
+    </view>
+  </block>
+</template>
+
+
+<template name="html">
+  <block wx:if="{{tagName}}">
+    <view class="html-tag-{{ tagName }} {{ attrs.class}}">
+      <block wx:for="{{children}}" wx:key="{{index}}">
+        <block wx:if="{{item.children.length}}">
+          <view class="html-tag-{{ item.tagName }}">
+            <block wx:for="{{children}}" wx:key="{{index}}">
+              <template is="html-recursive" data="{{...item}}"/>
+            </block>
+          </view>
+        </block>
+        <block wx:else>
+          <template is="html-item" data="{{item}}"/>
+        </block>
+      </block>
+    </view>
+  </block>
+</template>

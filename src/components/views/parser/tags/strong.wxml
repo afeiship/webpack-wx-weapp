@@ -1,0 +1,3 @@
+<template name="html-strong" wx:if="content">
+  <view class="html-tag-strong">{{content}}</view>
+</template>

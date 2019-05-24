@@ -1,0 +1,60 @@
+[
+  {
+    "type": "text",
+    "content": "\n  ",
+    "attrs": {}
+  },
+  {
+    "type": "element",
+    "tagName": "div",
+    "children": [
+      {
+        "type": "text",
+        "content": "\n    Just a test\n    ",
+        "attrs": {}
+      },
+      {
+        "type": "element",
+        "tagName": "strong",
+        "children": [
+          {
+            "type": "text",
+            "content": "Strong text",
+            "attrs": {}
+          }
+        ],
+        "attrs": {}
+      },
+      {
+        "type": "text",
+        "content": "\n    ",
+        "attrs": {}
+      },
+      {
+        "type": "element",
+        "tagName": "tu-chart",
+        "children": [],
+        "attrs": {
+          "data-json": "eyJ0aWQiOiIzMjI3IiwiaXNTdGF0aWMiOmZhbHNlfQ==",
+          "dataJson": {
+            "tid": "3227",
+            "isStatic": false
+          }
+        }
+      },
+      {
+        "type": "text",
+        "content": "\n  ",
+        "attrs": {}
+      }
+    ],
+    "attrs": {
+      "class": "test-class"
+    }
+  },
+  {
+    "type": "text",
+    "content": "\n  ",
+    "attrs": {}
+  }
+]

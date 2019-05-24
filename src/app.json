@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/parserv2/index",
     "pages/parsers/index",
     "pages/parser/index",
     "pages/index/index",

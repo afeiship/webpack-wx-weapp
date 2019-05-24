@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <import src="../../components/views/parser/html.wxml" />
+
+  <template is="html" data="{{ ...nodes }}"></template>
+</view>
