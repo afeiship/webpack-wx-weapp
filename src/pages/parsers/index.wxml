@@ -7,6 +7,10 @@
       src="{{attributes.src}}"></image>
   </template>
 
+  <template name="html-tu-image">
+    <tu-image src="{{attributes.src}}"/>
+  </template>
+
   <template name="html-video">
     <video
       class="{{attributes.class}}"
@@ -15,10 +19,6 @@
 
   <template name="html-text" wx:if="content">
     <text>{{content}}</text>
-  </template>
-
-  <template name="html-section">
-    <view>IAM Section</view>
   </template>
 
   <template name="html-br">
@@ -46,11 +46,14 @@
     <block wx:elif="{{item.tagName === 'tu-audio'}}">
       <template is="html-audio" data="{{...item}}" />
     </block>
+    <block wx:elif="{{item.tagName === 'tu-image'}}">
+      <template is="html-tu-image" data="{{...item}}" />
+    </block>
     <block wx:elif="{{item.tagName === 'br'}}">
       <template is="html-br"></template>
     </block>
     <block wx:else>
-      <view>[NOT SUPPORT YET]</view>
+      <view hidden>[NOT SUPPORT YET]</view>
     </block>
   </template>
 

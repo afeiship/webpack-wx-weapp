@@ -1,0 +1,4 @@
+<view class="tu-image">
+  <image src="{{ src }}" class="tu-image-core"/>
+  <button type="primary" bindtap="onTap">Preview</button>
+</view>

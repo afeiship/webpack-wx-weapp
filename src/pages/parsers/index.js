@@ -40,6 +40,17 @@ nx.Page({
           ]
         },
         {
+          type: 'element',
+          tagName: 'tu-image',
+          attributes: {
+            src: 'http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg'
+          }
+        },
+        {
+          type: 'element',
+          tagName: 'br'
+        },
+        {
           type: 'text',
           content: 'Just another text!!!'
         }
