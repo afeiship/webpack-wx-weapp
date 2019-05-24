@@ -3,9 +3,9 @@ import gtbJson from './gtb.json';
 
 nx.Page({
   data: {
-    nodes: {
+    item: {
       type: 'element',
-      tagName: 'div',
+      tagName: 'section',
       attrs: {
         class: 'root-container'
       },
@@ -48,7 +48,8 @@ nx.Page({
                   tid: '3227',
                   isStatic: false
                 }
-              }
+              },
+              content:'tu-chart text...'
             }
           ],
           attrs: {

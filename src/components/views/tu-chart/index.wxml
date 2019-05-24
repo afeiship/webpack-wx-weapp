@@ -1,0 +1,7 @@
+<view class="tu-chart" bindtap="onTap">
+  <view>TU-CHART</view>
+  <image src="https://via.placeholder.com/200x100" class="tu-chart"/>
+  <view>
+    {{ dataStr }}
+  </view>
+</view>

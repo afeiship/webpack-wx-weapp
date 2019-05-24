@@ -1,3 +1,13 @@
 /**parser Start**/
-
+.html-tag {
+  &-br {
+  }
+  &-img {
+  }
+  &-strong {
+    font-weight: bold;
+  }
+  &-text {
+  }
+}
 /**parser  End**/

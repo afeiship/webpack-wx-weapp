@@ -1,14 +1,6 @@
-<import src="tags/br.wxml" />
-<import src="tags/img.wxml" />
-<import src="tags/text.wxml" />
-
-
-<import src="htmls/html1.wxml" />
-<import src="htmls/html-item.wxml" />
-
-
-
-<template name="html">
+<import src="./html2.wxml" />
+<import src="./html-item.wxml" />
+<template name="html1">
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
     <template is="html-item" data="{{ item }}"/>
   </block>
@@ -17,7 +9,7 @@
     <view class="html-tag-{{ item.tagName }}">
       <block wx:for="{{ item.children }}" wx:key="{{ index }}"   wx:for-item="subItem">
         <view class="html-tag-{{ subItem.tagName }}">
-          <template is="html1" data="{{ item: subItem }}"/>
+          <template is="html2" data="{{ item: subItem }}"/>
         </view>
       </block>
     </view>
@@ -27,5 +19,3 @@
     <tu-text>{{ item.content }}</tu-text>
   </block>
 </template>
-
-
