@@ -1,6 +1,9 @@
 import { $theme } from '#';
 
 nx.Component({
+  options: {
+    addGlobalClass: true,
+  },
   properties: {
     // value: {
     //   type: String,

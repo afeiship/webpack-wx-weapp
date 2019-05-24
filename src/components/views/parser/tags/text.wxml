@@ -1,3 +1,3 @@
 <template name="html-text" wx:if="value">
-  <tu-text value="{{ value }}" />
+  <text> {{ value }} </text>
 </template>

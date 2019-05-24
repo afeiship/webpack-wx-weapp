@@ -14,16 +14,14 @@
   </block>
 
   <block wx:if="{{ item.tagName &&  item.children.length > 0}}">
-    <view class="html-tag-{{ item.tagName }}">
+    <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
       <block wx:for="{{ item.children }}" wx:key="{{ index }}"   wx:for-item="subItem">
-        <view class="html-tag-{{ subItem.tagName }}">
           <template is="html1" data="{{ item: subItem }}"/>
-        </view>
       </block>
     </view>
   </block>
 
-  <block wx:else>
+  <block wx:if="{{ item.type == 'text' }}">
     <tu-text>{{ item.content }}</tu-text>
   </block>
 </template>

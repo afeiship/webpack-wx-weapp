@@ -1,6 +1,4 @@
 <template name="html-item">
-  <view>tagName: {{ tagName }}</view>
-  <view>type: {{ type }}</view>
   <block wx:if="{{item.type === 'text'}}">
     <tu-text>{{ item.content }}</tu-text>
   </block>
