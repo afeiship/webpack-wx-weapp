@@ -22,7 +22,7 @@
   </block>
 
   <block wx:if="{{ item.type == 'text' }}">
-    <tu-text>{{ item.content }}</tu-text>
+    {{ item.content }}
   </block>
 </template>
 

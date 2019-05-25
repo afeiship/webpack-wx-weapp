@@ -1,3 +1,4 @@
 <!--logs.wxml-->
 <import src="../../components/views/parser/html.wxml" />
+<view style="color: #ff0000;">test color text</view>
 <template is="html" data="{{ item: nodes }}"></template>

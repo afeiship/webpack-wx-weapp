@@ -1,6 +1,6 @@
 <template name="html-item">
   <block wx:if="{{item.type === 'text'}}">
-    <tu-text>{{ item.content }}</tu-text>
+    {{ item.content }}
   </block>
   <block wx:elif="{{item.tagName === 'img'}}">
     <template is="html-img" data="{{...item}}" />
