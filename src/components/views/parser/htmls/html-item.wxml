@@ -8,6 +8,9 @@
   <block wx:elif="{{item.tagName === 'br'}}">
     <template is="html-br"/>
   </block>
+  <block wx:elif="{{item.tagName === 'a'}}">
+    <tu-anchor attrs="{{ item.attrs }}"/>
+  </block>
   <block wx:elif="{{item.tagName === 'tu-chart'}}">
     <tu-chart dataJson="{{ item.attrs.dataJson }}"/>
   </block>
