@@ -9,6 +9,7 @@ nx.Component({
   },
   lifetimes: {
     created() {
+      console.log(this.data)
       console.log('tu-anchor created...');
     }
   },

@@ -9,6 +9,11 @@
 
 
 <template name="html">
+  <block wx:if="{{ item.tagName === 'a' }}">
+    <view>anchor:-> {{ item.tagName }}</view>
+    <template is="html-item" data="{{ item }}"/>
+  </block>
+
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
     <template is="html-item" data="{{ item }}"/>
   </block>

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "WXML解析器",
   "usingComponents": {
     "user": "../../components/views/user/user",
-    "tu-chart": "../../components/views/tu-chart/index"
+    "tu-chart": "../../components/views/tu-chart/index",
+    "tu-anchor": "../../components/views/tu-anchor/index"
   }
 }

@@ -1,19 +1,28 @@
+
 <import src="./html3.wxml" />
+
 <import src="./html-item.wxml" />
 <template name="html2">
   <block wx:if="{{ item.tagName &&  item.children.length == 0}}">
-    <template is="html-item" data="{{ item }}"/>
+    <template is="html-item" data="{{ item }}" />
   </block>
-
   <block wx:if="{{ item.tagName &&  item.children.length > 0}}">
-    <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
-      <block wx:for="{{ item.children }}" wx:key="{{ index }}"   wx:for-item="subItem">
-          <template is="html3" data="{{ item: subItem }}"/>
-      </block>
-    </view>
+    <block wx:if="{{ item.tagName == 'a' }}">
+      <tu-anchor attrs="{{ item.attrs }}">
+        <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="subItem">
+          <template is="html3" data="{{ item: subItem }}" />
+        </block>
+      </tu-anchor>
+    </block>
+    <block wx:else>
+      <view class="html-tag-{{ item.tagName }} {{ item.attrs.class }}" style="{{ item.attrs.style }}">
+        <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="subItem">
+                    <template is="html3" data="{{ item: subItem }}" />
+                  </block>
+      </view>
+    </block>
   </block>
-
   <block wx:if="{{ item.type == 'text' }}">
-    {{ item.content }}
+    <tu-text>{{ item.content }}</tu-text>
   </block>
 </template>

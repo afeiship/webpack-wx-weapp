@@ -1,18 +1,16 @@
 <template name="html-item">
-  <block wx:if="{{item.type === 'text'}}">
-    {{ item.content }}
-  </block>
+  <block wx:if="{{item.type === 'text'}}">{{ item.content }}</block>
   <block wx:elif="{{item.tagName === 'img'}}">
     <template is="html-img" data="{{...item}}" />
   </block>
   <block wx:elif="{{item.tagName === 'br'}}">
-    <template is="html-br"/>
+    <template is="html-br" />
   </block>
   <block wx:elif="{{item.tagName === 'a'}}">
-    <tu-anchor attrs="{{ item.attrs }}"/>
+    <tu-anchor attrs="{{ item.attrs }}" />
   </block>
   <block wx:elif="{{item.tagName === 'tu-chart'}}">
-    <tu-chart dataJson="{{ item.attrs.dataJson }}"/>
+    <tu-chart dataJson="{{ item.attrs.dataJson }}" />
   </block>
   <block wx:else>
     <view hidden>[ NOT SUPPORT YET ]</view>
