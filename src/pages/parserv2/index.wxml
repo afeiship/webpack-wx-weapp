@@ -1,4 +1,12 @@
 <!--logs.wxml-->
+<audio
+  bindtap="onTap"
+  binderror="onErr"
+  bindplay="onPlay"
+  bindpause="onPause"
+  poster="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg"
+  src="https://tsscdn.finxos.com/cloud/statics/music-test.mp3" id="myAudio" controls loop></audio>
+
 <import src="../../components/views/parser/html.wxml" />
 <view style="color: #ff0000;">test color text</view>
 <template is="html" data="{{ item: nodes }}"></template>
