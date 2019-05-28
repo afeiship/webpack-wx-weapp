@@ -1,4 +1,6 @@
 <!--logs.wxml-->
+<!--注意：这里只有在 Page 才可以，在 Componetn 下 context 并不能用API触发生效-->
+<!--https://developers.weixin.qq.com/community/develop/doc/000ccae95002d0839b78e0b3156000?highLine=wx.createAudioContext-->
 <audio
   bindtap="onTap"
   binderror="onErr"

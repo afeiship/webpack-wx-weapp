@@ -3405,6 +3405,7 @@ nx.Page({
     load() {
       this.audioCtx = wx.createAudioContext('myAudio');
       console.log('load parsers page!!!');
+      console.log(this.audioCtx)
     }
   }
 });
