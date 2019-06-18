@@ -57,6 +57,7 @@
     "babel-runtime": "^6.23.0",
     "es6-promise": "^4.1.0",
     "http-rest-config": "github:afeiship/http-rest-config",
+    "next-chunk": "github:afeiship/next-chunk",
     "next-content-type": "github:afeiship/next-content-type",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",

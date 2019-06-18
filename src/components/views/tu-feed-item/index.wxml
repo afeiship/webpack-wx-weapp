@@ -1,0 +1,6 @@
+<view class="tc tu-feed-item">
+  <view class="f14 elem_name">{{ model.elem_name }}</view>
+  <view class="c-9 f12 creator_name">{{ model.creator_name }}</view>
+  <image src="{{ model.cover }}" />
+  <view class="f12 c-3 lc-2 abstract">{{ model.abstract }}</view>
+</view>

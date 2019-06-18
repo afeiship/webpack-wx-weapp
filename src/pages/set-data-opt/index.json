@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "DataSet",
+  "usingComponents": {
+    "tu-feed-item": "../../components/views/tu-feed-item/index"
+  }
+}

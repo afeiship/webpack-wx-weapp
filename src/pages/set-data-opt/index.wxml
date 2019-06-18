@@ -1,0 +1,6 @@
+<view>
+  <view class="mb10 item" wx:for="{{ data.feeds }}" wx:key="item.elem_id" wx:for-item="item">
+    <tu-feed-item className="px20" type="{{ item.elem_type }}" model="{{ item }}" />
+  </view>
+  <button bindtap="onTap">Add JSON</button>
+</view>

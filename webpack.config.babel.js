@@ -91,12 +91,12 @@ export default (env = {}) => {
         {
           test: /\.(json)$/,
           include: /src/,
-          exclude: /themes/,
+          exclude: /themes|assets/,
           use: [relativeFileLoader()]
         },
         {
           test: /\.(json)$/,
-          include: /themes/,
+          include: /themes|assets/,
           use: [{ loader: 'json-loader' }]
         },
         {
