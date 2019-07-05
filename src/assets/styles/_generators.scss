@@ -7,6 +7,7 @@ $colors: (
   6: #666,
   8: #888,
   9: #999,
+  primary-hsl: hsl(200, 0.3, 0.8),
   primary: get('color.primary.default'),
   primary-lighten: lighten(get('color.primary.default'), 10%),
   primary-50: rgba(get('color.primary.default'), 0.1),
@@ -15,7 +16,22 @@ $colors: (
   gray: get('color.gray')
 );
 
-//@debug $colors;
+//@debug get('color.primary.default');
+//@debug hue(get('color.primary.default'));
+//@debug hsl(
+//  hue(get('color.primary.default')),
+//  saturation(get('color.primary.default')),
+//  lightness(get('color.primary.default'))
+//);
+
+body {
+  /**test hsl**/
+  background: hsl(
+    hue(get('color.primary.default')),
+    33%,
+    97
+  );
+}
 
 $margin-list: (2, 3, 4, 5, 6, 8, 10, 14, 20, 30, 40, 50);
 $padding-list: (3, 5, 6, 8, 10, 14, 16, 20, 30, 50);

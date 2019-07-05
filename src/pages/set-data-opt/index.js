@@ -2,6 +2,16 @@ import { $route } from '#';
 import 'next-chunk';
 import data from '@/assets/big-data.json';
 
+let newState = null;
+const asyncSetData = ({ context, newData }) => {
+  newState = nx.mix(newState, newData);
+  Promise.resolve().then(() => {
+    if (!newState) return;
+    context.setData(newState);
+    newState = null;
+  });
+};
+
 nx.Page({
   data: {
     logs: [],
@@ -14,7 +24,7 @@ nx.Page({
     },
     onTap() {
       // const data = require('@/assets/big-data.json');
-      this.set1();
+      this.set3();
     },
     set1() {
       console.log('data:->', data);
@@ -32,6 +42,12 @@ nx.Page({
         this.setData({ data }, () => {
           console.timeEnd('setData2');
         });
+      });
+    },
+    set3() {
+      console.time('setData1');
+      asyncSetData(this, { data: data.data }, () => {
+        console.timeEnd('setData1');
       });
     },
     onMsg(e) {

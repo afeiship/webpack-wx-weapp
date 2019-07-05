@@ -2,7 +2,7 @@
   "variables": {
     "color": {
       "primary": {
-        "default": "#4cd964",
+        "default": "#0056FF",
         "dark": "#f60",
         "light": "#eee"
       },
