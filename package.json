@@ -30,7 +30,7 @@
     "create-wxapp-page": "^2.0.2",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.11",
-    "eslint": "^3.12.1",
+    "eslint": "^6.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-prettier": "^2.3.1",
