@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<import src="/components/views/motto/motto.wxml"/>
+
+<view class="container cRed">
+
+    <view class="fixed-header-hd">
+      Fixed-header
+    </view>
+    <view class="fixed-header-virtual-bd"></view>
+    <view class="fixed-header-bd">
+      INNER BOTTOM
+    </view>
+  <rich-text nodes="{{ richWxml }}"/>
+  <view class="c-primary">
+    PRIMARY - COLOR
+  </view>
+  <view>Rich Text start</view>
+  <rich-text nodes="{{ richText }}"/>
+  <view>Rich Text end</view>
+  <view class="c-gray">
+    Gray - Text
+  </view>
+  <button bindtap="toWebs" class="btn-action">To Webs</button>
+  <image class="user-avatar" src="http://avatar.chsword.net/avatar/1"/>
+  <view class="blank">BLANK</view>
+  <user/>
+  <textarea class="token" maxlength="-1" auto-height value="{{ auth }}"/>
+  <view>
+    <user ref="user1" avatarUrl="{{userInfo.avatarUrl}}" nickName="{{userInfo.nickName}}"></user>
+    <avatar />
+  </view>
+  <button bindtap="showSheet" class="btn-action">Show ActionSheet</button>
+  <button type="primary" bindtap="test1">
+    text from redux-memory(PAGE-index[route to logs]): {{ memory.test }}
+  </button>
+  <view class="motto">
+    <template is="motto" data="{{motto:motto}}" />
+  </view>
+  <view class="powered">
+    <view>Show GlolbalData:{{ gData }}</view>
+    <button bindtap="test2">Set GlolbalData</button>
+    <button bindtap="test1" class="cRed">BY FEI</button>
+  </view>
+</view>

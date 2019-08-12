@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "HOME Page",
+  "usingComponents": {
+    "user": "../../components/views/user/user",
+    "avatar": "../../components/views/avatar/avatar"
+  }
+}
