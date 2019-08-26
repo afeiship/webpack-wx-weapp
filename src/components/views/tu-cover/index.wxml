@@ -1,0 +1,6 @@
+<cover-view class="tu-cover">
+  <slot></slot>
+  <button class="btn" bindtap="tap1">
+    我是 BUTTON 的内容
+  </button>
+</cover-view>

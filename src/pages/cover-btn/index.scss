@@ -1,0 +1,32 @@
+.container {
+  color: color('primary.dark');
+  background: get('color.primary.light');
+
+  .fixed-header {
+    &-virtual-bd {
+      display: none;
+    }
+
+    &-virtual-bd,
+    &-hd {
+      height: 50px;
+      color: #fff;
+    }
+
+    &-hd{
+      border: 1px solid #f00;
+      background: #f60;
+    }
+
+    &-bd {
+      position: sticky;
+      position: -webkit-sticky;
+      z-index: 1;
+      top: 0;
+      height: 50px;
+      display: block;
+      background: #060;
+      width: 100%;
+    }
+  }
+}

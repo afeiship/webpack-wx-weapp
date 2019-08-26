@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "HOME Page",
+  "usingComponents": {
+    "tu-cover": "../../components/views/tu-cover/index",
+    "user": "../../components/views/user/user",
+    "avatar": "../../components/views/avatar/avatar"
+  }
+}
