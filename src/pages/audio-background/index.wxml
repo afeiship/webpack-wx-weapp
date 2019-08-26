@@ -1,7 +1,8 @@
 <!-- index.wxml -->
 <import src="/components/views/motto/motto.wxml" />
 <view class="container cRed">
-  <textarea  bindinput="input1" value="{{value}}"/>
-  <button bindtap="play1">TestVoice-BgAudio</button>
-  <button bindtap="play2">TestVoice-PlayVoice</button>
+  <textarea bindinput="input1" value="{{value}}" />
+  <button type="primary" bindtap="play2">TestVoice-PlayVoice(success)</button>
+  <button bindtap="play1">TestVoice-BgAudio(Failed)</button>
+  <button bindtap="play3">TestVoice-PlayMp3(Failed)</button>
 </view>

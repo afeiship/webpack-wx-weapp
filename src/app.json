@@ -1,8 +1,8 @@
 {
   "requiredBackgroundModes": ["audio"],
   "pages": [
-    "pages/cover-btn/index",
     "pages/audio-background/index",
+    "pages/cover-btn/index",
     "pages/set-data-opt/index",
     "pages/index/index",
     "pages/parserv2/index",

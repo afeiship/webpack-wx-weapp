@@ -2,8 +2,7 @@ const delay = (t = 0) => new Promise((resolve) => setTimeout(resolve, t));
 nx.Page({
   data: {
     motto: 'Hello World',
-    value:
-      '清晨醒来，打开窗帘'
+    value: '清晨醒来，打开窗帘'
   },
   // 事件处理函数
   methods: {
@@ -11,6 +10,13 @@ nx.Page({
       // this.setData({ value:})
       const { value } = e.detail;
       this.setData({ value });
+    },
+    play3() {
+      const self = this;
+      const { value } = this.data;
+      const url = `https://tsscdn-dev.finxos.com/tu-resources/xlsfile/media/2019_08/2019_08_26/73796d626f6c455ad83766489b22d40068681ba03a6a.mp3`;
+      wx.showToast({ title: 'Play!' });
+      self.ctx.src = url;
     },
     play1() {
       const self = this;
@@ -20,16 +26,17 @@ nx.Page({
       self.ctx.src = url;
     },
     play2() {
+      const self = this;
       const { value } = this.data;
+      const newPath = `${wx.env.USER_DATA_PATH}/test.mp3`;
       const url = `http://tts.baidu.com/text2audio/text2audio?lan=zh&ie=UTF-8&spd=3&text=${value}`;
       wx.downloadFile({
         url,
+        filePath: newPath,
         success: function(res) {
-          console.log('res.code', res);
-          wx.showToast({ title: res.tempFilePath });
-          wx.playVoice({
-            filePath: res.tempFilePath
-          });
+          wx.showToast({ title: '开始播放!' });
+          // wx.playVoice({ filePath: newPath })
+          self.ctx.src = res.filePath;
         }
       });
     }
