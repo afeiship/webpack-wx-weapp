@@ -1,8 +1,12 @@
 <!-- index.wxml -->
 <import src="/components/views/motto/motto.wxml" />
+<view style="padding:10px;">
+需要打开调试模式，因为现在还未配置baiduAPI
+</view>
 <view class="container cRed">
   <textarea bindinput="input1" value="{{value}}" />
-  <button type="primary" bindtap="play2">TestVoice-PlayVoice(success)</button>
-  <button bindtap="play1">TestVoice-BgAudio(Failed)</button>
-  <button bindtap="play3">TestVoice-PlayMp3(Failed)</button>
+  <button type="primary" bindtap="play2">TestVoice-重命名</button>
+  <button type="primary" bindtap="play2_opt">TestVoice-加header</button>
+  <button bindtap="play1">TestVoice-BgAudio(mpeg)</button>
+  <button bindtap="play3">TestVoice-PlayMp3(xxx)</button>
 </view>
