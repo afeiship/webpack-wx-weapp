@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<view class="container">
+  <button bindtap="showInput">悬空的输入</button>
+  <button bindtap="showInput2">吸附的输入</button>
+  <view class="modal-overlay" wx:if="{{visible}}" bindtap="close"/>
+  <view class="modal" wx:if="{{visible}}" cursor-spacing="100">
+    <textarea value="{{ value }}" bindinput="onInput"></textarea>
+    <button type="primary" bindtap="submitMsg">悬空的输入</button>
+  </view>
+  <view class="modal2" wx:if="{{visible2}}">
+    <textarea auto-focus="true" class="fly-input" fixed="true" adjust-position="false" value="{{ value2 }}" bindinput="onInput2" cursor-spacing="150" />
+    <button type="primary" bindtap="submitMsg2">吸附的输入</button>
+  </view>
+  <view class="modal-overlay" wx:if="{{visible2}}" bindtap="close2"/>
+</view>

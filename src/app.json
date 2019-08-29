@@ -1,6 +1,7 @@
 {
   "requiredBackgroundModes": ["audio"],
   "pages": [
+    "pages/input-words-modal/index",
     "pages/audio-background/index",
     "pages/cover-btn/index",
     "pages/set-data-opt/index",

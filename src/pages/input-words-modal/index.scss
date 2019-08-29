@@ -1,0 +1,44 @@
+.container {
+  padding: 20px;
+  .modal-overlay {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .modal {
+    z-index: 3;
+    position: fixed;
+    top: 37.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    textarea {
+      padding: 10px;
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  .modal2 {
+    z-index: 3;
+    position: fixed;
+    bottom: 0;
+    textarea {
+      padding: 10px;
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  .fly-input {
+    width: 100vw;
+    height: 100px;
+    padding: 10px;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+  }
+}
